@@ -1,0 +1,44 @@
+Learn how to use Oauth Api
+	Watch the video before meeting tommrow - not everyone but some?
+	https://www.youtube.com/watch?v=SBvmnHTQIPY
+
+Adam/Conner - Oauth
+
+Tanner/Nona - Front end 
+
+Meeting minutes 
+	Tanner	-	Monday
+	Nona	-	Tuesday
+	Adam	-	Wensday
+	Conner  - 	Thursday
+	Tanner/Nona - 	Friday
+
+add to the weekly status reort every time you do somthing!
+Nona will add jira to weekly status
+
+Elevator pitch! 
+	Gotta be there the whole time
+	thursday 11:56
+	Eveyone does 3 slides 
+	1pm tommrow? 
+	Adam - 1-4
+	Tanner - 5-7
+	Conner - 8-10
+	Nona -	11-13
+	cstacey98@icloud.com
+
+
+Nona gonna have to push to live since shes the owner of the git 
+
+Jira
+	Click create - ye ye
+	Make sure we put the Assignee as Unassigned or exactly who you want
+	
+Goals <3
+	Tuesday have slides ready
+	Pitch presentation done
+	wensday 11:45 hopeful meeting time 
+	Weeklky satus report dure 
+	03/01/20 first sprint demo 
+	Plan next week on fridays not monday morning 
+
