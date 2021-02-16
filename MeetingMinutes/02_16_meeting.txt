@@ -1,0 +1,12 @@
+meeting attendees: all
+timeframe: 12:30-1:30
+
+tasks: continue researching respective languages for sprint one
+       rehearse elevator pitch
+         - complete slides
+         - if slides completed, practice
+completed: did in fact wrap up all elevator pitch slides
+	   ran through the elevator pitch
+           
+plans for future: continue practicing and rehearsing elevator pitch
+		  continue researching for website implementation

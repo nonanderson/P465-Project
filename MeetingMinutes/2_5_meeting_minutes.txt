@@ -1,0 +1,18 @@
+Team 4
+Meeting Minutes 2/5/2021
+CSCI-P465/565 (Software Engineering I)
+Meeting Attendees
+Nona Anderson
+Tanner Hay
+Adam Martinez
+Connor Stacey
+ 
+General Meeting Info
+	Meeting Purpose: Discuss top 3 preferences for project theme
+	Start Time: 4:00 P.M.
+	Stop Time: 4:50 P.M.
+New Business
+Discussion Summary: Started getting to know each other. Set up a communication platform. Discussed our programming strengths. Then discussed preferred project themes. Ended with general discussion.
+Decisions Summary: Top 3: Rental Management, Wellness Tracking, Delivery Management. Discord for communication. Decided to try to hold meetings on Tuesday evenings.
+New Action Items: N/A
+
