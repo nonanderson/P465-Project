@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Pitch
 	Witty not Silly 
 	overall legiablilty 
@@ -20,3 +21,26 @@ Pitch
 	
 	Financial Summary :
 		Make more readable 
+=======
+Team 4
+Meeting Minutes 2/17/2021
+CSCI-P465/565 (Software Engineering I)
+Meeting Attendees
+Nona Anderson
+Tanner Hay
+Adam Martinez
+Connor Stacey
+Disha Talreja
+
+General Meeting Info
+	Meeting Purpose: Review Elevator Pitch
+	Start Time: 12:00 P.M.
+	Stop Time: 12:30 P.M.
+New Business
+Discussion Summary: Legibility should be improved in spots. 
+	Be witty but not silly.
+	Only 1 person has to present
+	Went over goals for sprint 1
+Decisions Summary: All but Conor will work to improve the slides. Conor will present
+New Action Items: Update slides, continue work on sprint 1
+>>>>>>> c48cad74f71fbac5c5452f51461b068665d0c3d3
