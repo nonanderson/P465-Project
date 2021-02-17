@@ -1,27 +1,3 @@
-<<<<<<< HEAD
-Pitch
-	Witty not Silly 
-	overall legiablilty 
-	not exactly what she was looking for 
-	going to send presatations from previous years
-	Look from the class pespective 
-	Diffrent fonts make that same 
-	Only one of us has to present? look into 
-
-	Title slide:
-		say that its a rental mangament service 
-
-
-	Cometitive Landscape:
-		Go for the sewer gnomes!!
-
-	Management Team:
-		Lead sewer gnome is iffy 
-		
-	
-	Financial Summary :
-		Make more readable 
-=======
 Team 4
 Meeting Minutes 2/17/2021
 CSCI-P465/565 (Software Engineering I)
@@ -43,4 +19,3 @@ Discussion Summary: Legibility should be improved in spots.
 	Went over goals for sprint 1
 Decisions Summary: All but Conor will work to improve the slides. Conor will present
 New Action Items: Update slides, continue work on sprint 1
->>>>>>> c48cad74f71fbac5c5452f51461b068665d0c3d3
