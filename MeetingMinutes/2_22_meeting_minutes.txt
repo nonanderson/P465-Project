@@ -1,0 +1,12 @@
+What to be done this week
+	oauth
+	home landing page
+	login landing page
+	Registration page	
+		2 box password verification
+		security questions
+	Style is the important part make sure it looks nice 
+
+Update jira every sprint
+
+	
