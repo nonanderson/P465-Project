@@ -5,10 +5,7 @@ body{
     background: repeating-linear-gradient(73deg, #1a5a75, #18ad39 15%, #3cf6be 20%);*/
     background: linear-gradient(to right, #21a864,#4477c4);
 }
-h1 {
-    
-    text-align: center;
-  }
+
 
 
 form {
