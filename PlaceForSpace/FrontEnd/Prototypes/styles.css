@@ -1,0 +1,32 @@
+body{
+    color: #fff2cc;
+    /*background-repeat: no-repeat;
+    
+    background: repeating-linear-gradient(73deg, #1a5a75, #18ad39 15%, #3cf6be 20%);*/
+    background: linear-gradient(to right, #21a864,#4477c4);
+}
+
+
+form {
+    text-align: center;
+} 
+
+.navbar{
+    background-color: #fff2cc;
+}
+.navbar a {
+    font-size: 32x;
+}
+
+.title {
+    text-align: center;
+}
+
+.container{
+    
+    text-align: center;
+    margin:auto;
+    width: 40pc;
+    background-color: #ffffff;
+    color:black;
+}
