@@ -1,0 +1,11 @@
+{
+  "name": "place_for_space",
+  "version": "1.0.0",
+  "description": "rental service for P465",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
