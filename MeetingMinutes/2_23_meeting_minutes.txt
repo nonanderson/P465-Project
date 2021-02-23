@@ -1,0 +1,9 @@
+meeting minutes for 02/23
+16:41 - 16:48
+
+-Decent progress made on front and back end
+-some blockages with backend, minor
+-potentially late thursday completion, ideally beforehand
+ - backend/frontend wednesday
+ - integration thursday
+ - total completion friday
