@@ -7,7 +7,26 @@ body{
 }
 
 
-
 form {
     text-align: center;
 } 
+
+.navbar{
+    background-color: #fff2cc;
+}
+.navbar a {
+    font-size: 32x;
+}
+
+.title {
+    text-align: center;
+}
+
+.container{
+    
+    text-align: center;
+    margin:auto;
+    width: 40pc;
+    background-color: #ffffff;
+    color:black;
+}
