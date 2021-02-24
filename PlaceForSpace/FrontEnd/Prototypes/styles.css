@@ -1,11 +1,85 @@
-body{
-    color: #fff2cc;
-    /*background-repeat: no-repeat;
-    
-    background: repeating-linear-gradient(73deg, #1a5a75, #18ad39 15%, #3cf6be 20%);*/
-    background: linear-gradient(to right, #21a864,#2964bd);
+@import url('https://fonts.googleapis.com/css?family=Lato:400, 500, 700');
+
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
+body{
+    color: #fff2cc;
+    font-family: Lato;
+    margin: auto;
+    padding: 0 40px;
+    max-width: 1800px;
+    /*background-repeat: no-repeat;
+    background: repeating-linear-gradient(73deg, #1a5a75, #18ad39 15%, #3cf6be 20%);*/
+    background: linear-gradient(to right, #0c7742,#2f9459);
+}
+
+.pfs-logo {
+    color: inherit;
+    font-size: 1.25em;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 1.75rem;
+}
+
+.main-nav a {
+    color: inherit;
+    text-decoration: none;
+    padding: .75rem;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.homepage-layout {
+    text-align: center;
+}
+
+.full-height-grow {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container a {
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.register-option {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+}
+
+#questch {
+    align-self: center;
+}
+
+.register-button {
+    border: 2px solid #fff2cc;
+    color: #0c7742;
+    background-color: #fff2cc;
+    padding: .5rem .5rem;
+    border-radius: .5rem;
+    text-align: center;
+    margin-left: 2em;
+    text-decoration: none;
+}
+
+.register-button p{
+    text-decoration: none;
+    color:#0c7742; 
+    margin: 0.5em;
+}
 
 form {
     text-align: center;
@@ -22,11 +96,20 @@ form {
     text-align: center;
 }
 
-.container{
-    
-    text-align: center;
-    margin:auto;
-    width: 40pc;
-    background-color: #ffffff;
-    color:black;
+/* HOVER EFFECTS */
+
+.register-button:hover p {
+    color:rgb(175, 233, 127);
+}
+
+.register-button:hover {
+    background-color: #2f9459;
+}
+
+.login-container a:hover{
+    color: rgb(175, 233, 127);
+}
+
+.main-nav a:hover{
+    color: rgb(175, 233, 127);
 }

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html
->
+<html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,27 +9,45 @@
     <title>Login in to your account</title>
 
 </head>
+
 <body>
+    <header class="main-header">
+        <a href="homepage-prototype.html" class="pfs-logo">
+            <img src="place-for-space.png">
+            <div class="pfs">Place For Space</div>
+        </a>
+        <nav class="main-nav">
+            <a href="about-page-prototype.html">About</a>
+            <a href="housing-page-prototype.html">Check Out Houses</a>
+            <a href="login-page-prototype.html">Login</a>
+        </nav>
+    </header>
     <div w3-include-html="header-prototype.html"></div>
     <div class="title">
-        <h1>Place for Space</h1>
     </div>
-    
 
-    <div class="container">
-    <form action="">
-        <h1> Login in to your account </h1>
-        <p>
-            <label for="username">Username:</label>
-            <input type="text" id="username">
-        </p>
-        <p>
-            <label for="password">Password:</label>
-            <input type="password" id="password">
-         </p>
-        <input type="submit" name="submit">
+
+    <div class="login-container">
+        <form action="">
+            <h1> Login in to your account </h1>
+            <p>
+                <label for="username">Username:</label>
+                <input type="text" id="username">
+            </p>
+            <p>
+                <label for="password">Password:</label>
+                <input type="password" id="password">
+            </p>
+            <input type="submit" name="submit">
     </div>
-        
-    </form> 
+
+    <div class="register-option">
+        <p id="questch">Don't have an account yet?</p>
+        <a class="register-button" href='registration-page-prototype.html'><p>Join us now!</p></a>
+    </div>
+
+
+    </form>
 </body>
+
 </html>
