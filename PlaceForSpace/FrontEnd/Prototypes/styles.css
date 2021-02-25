@@ -26,7 +26,7 @@ body{
 .main-nav a {
     color: inherit;
     text-decoration: none;
-    padding: .75rem;
+    padding: 1rem;
 }
 
 .main-header {
@@ -97,7 +97,6 @@ form input {
 }
 
 .navbar{
-    
     background-color: #fff2cc;
 }
 .navbar a {
@@ -134,7 +133,7 @@ form input {
     position: absolute;
     /*subject to change */
     background-color:  #62df96;
-    min-width: 160px;
+    max-width: 160px;
     padding: .5rem .5rem;
     border-radius: .5rem;
 }
@@ -149,11 +148,11 @@ form input {
 /* HOVER EFFECTS */
 
 .register-button:hover p {
-    color:rgb(175, 233, 127);
+    color:#2f9459;
 }
 
 .register-button:hover {
-    background-color: #2f9459;
+    background-color:#62df96;
 }
 
 .login-container a:hover{
@@ -167,6 +166,10 @@ form input {
 .dropdown:hover .dropdown-content{
     display: block;
     color: #2f9459;
+}
+
+.dropdown:hover .dropdownbtn {
+    color:  rgb(175, 233, 127);
 }
 
 .dropdown a:hover {
