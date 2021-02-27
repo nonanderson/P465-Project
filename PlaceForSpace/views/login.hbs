@@ -1,4 +1,4 @@
-<h3><i class="fas fa-book-reader"></i> PlaceforSpace</h3>
+{{!-- <h3><i class="fas fa-book-reader"></i> PlaceforSpace</h3>
 <div class="section">
     <p class="lead">Rent the perfect place for a trip out of town or the rest of your life</p>
 </div>
@@ -30,4 +30,51 @@
         </p>
 
     </div>
-</div>
+</div> --}}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Login in to your account</title>
+
+</head>
+
+<body>
+    
+    <div w3-include-html="header-prototype.html"></div>
+    <div class="title">
+    </div>
+
+
+    <div class="login-container">
+        <form action="">
+          
+            <h1> Login in to your account </h1>
+            
+            <div class="grid">
+                <label for="username">Username:</label>
+                <input type="text" id="username">
+                <label for="password">Password:</label>
+                <input type="password" id="password">
+            </div>
+            <br>
+            <input type="submit" name="login" value="Login">
+    </div>
+
+    <div class="register-option">
+        <p id="questch">Don't have an account yet?</p>
+        <a class="register-button" href='registration-page-prototype.html'><p>Join us now!</p></a>
+    </div>
+    </form>
+    <div class="google-option">
+            <a href="/auth/google" class="btn red darken-1">
+                <i class="fab fa-google left"></i> Login With Google
+            </a>
+        </div>
+</body>
+
+</html>

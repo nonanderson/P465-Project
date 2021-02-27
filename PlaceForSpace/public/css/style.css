@@ -58,6 +58,7 @@ body{
     flex-wrap: nowrap;
     justify-content: center;
     align-content: center;
+    text-align: center;
 }
 
 #questch {
@@ -197,4 +198,15 @@ form label{
 
 .dropdown a:hover {
     color: #fff2cc;
+}
+
+.google-option {
+    text-align: center;
+}
+
+.google-button {
+    align-self: center;
+    text-decoration: none;
+    background-color: blue;
+    color: white;
 }
