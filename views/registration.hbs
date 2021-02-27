@@ -1,0 +1,51 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+
+        <h1 class="text-center mb-3">
+            <i class="fas fa-user-plus"></i> Register
+        </h1>
+
+        <!-- Registration form -->
+        <form action="/registration" method="POST">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="firstName" id="firstName" name="firstName" class="form-control"
+                    placeholder="Enter First Name" {{#if firstName}} value={{firstName}} {{/if}} />
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="lastName" id="lastName" name="lastName" class="form-control" placeholder="Enter Last Name"
+                    {{#if lastName}} value={{lastName}} {{/if}} />
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" {{#if email}}
+                    value={{email}} {{/if}} />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control"
+                    placeholder="Create Password" />
+            </div>
+            <div class="form-group">
+                <label for="password2">Confirm Password</label>
+                <input type="password" id="password2" name="password2" class="form-control"
+                    placeholder="Confirm Password" />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+                Register
+            </button>
+        </form>
+        
+        <!-- Google Button -->
+        <div class="section">
+            <a href="/auth/google" class="btn red darken-1">
+                <i class="fab fa-google left"></i> Register With Google
+            </a>
+        </div>
+
+        <!-- Redirect to login -->
+        <p class="lead mt-4">Have An Account? <a href="/login">Login</a></p>
+
+    </div>
+</div>
