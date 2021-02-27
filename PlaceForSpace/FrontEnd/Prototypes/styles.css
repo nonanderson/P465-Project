@@ -81,6 +81,10 @@ body{
     margin: 0.5em;
 }
 
+.container{
+    text-align: center;
+}
+
 form {
     text-align: center;
 } 
@@ -94,7 +98,26 @@ form input {
     /* text-align: center; */
     margin-left: 2em;
     text-decoration: none;
+    justify-self: right;
 }
+
+
+form label{
+    /*Places the lables alined to the input box*/
+    text-align:right;
+}
+
+/*used on regisation and login page*/
+.grid{
+    display: grid;
+    
+    justify-content: center;
+    /*Spacing for the columns <label> then <input>*/
+    grid-template-columns: 200px 200px;
+    /*Spacing between the input boxes*/
+    row-gap: 20px;
+}
+
 
 .navbar{
     background-color: #fff2cc;
