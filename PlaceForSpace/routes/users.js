@@ -54,9 +54,14 @@ router.get('/housing', (req, res) => {
 
 // Dashboard Page
 router.get('/dashboard', (req, res) => {
-  res.render('dashboard', {
-    layout: 'dashboard',
-  })
+  try {
+    res.render('dashboard', {
+      name:  req.name
+    })
+  }
+  catch (e) {
+    console.log(e)
+  }
 })
 
 // Register Handle
