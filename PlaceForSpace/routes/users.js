@@ -52,6 +52,13 @@ router.get('/housing', (req, res) => {
   })
 })
 
+// Dashboard Page
+router.get('/dashboard', (req, res) => {
+  res.render('dashboard', {
+    layout: 'dashboard',
+  })
+})
+
 // Register Handle
 router.post('/registration', (req, res) => {
 
