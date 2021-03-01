@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Software Test Plan Template</title>
+  <meta content="Default User" name="author">
+</head>
+<body>
+<h1 style="text-align: center;">&lt;Place for Space&gt;<br>
+</h1>
+<h1 style="text-align: center;">Software Test Plan<br>
+</h1>
+<h2 style="text-align: center;">CSCI-P465/565 (Software Engineering I)</h2>
+<h2 style="text-align: center;"><span
+ style="text-decoration: underline;">Project Team</span></h2>
+<h3 style="text-align: center;">&lt;Nona Adnerson&gt;</h3>
+<h3 style="text-align: center;">&lt;Tanner Hay&gt;</h3>
+<h3 style="text-align: center;">&lt;Adam Martinez&gt;</h3>
+<h3 style="text-align: center;">&lt;Conner Stacy &gt;</h3>
+<hr style="width: 100%; height: 2px;"><br>
+<h2>1. Overview</h2>
+This section provides an overview of the testing approach used to
+verify the software product.<br>
+<h3 style="margin-left: 40px;">1.1 Test Objectives</h3>
+<div style="margin-left: 40px;"> The goals of our testing objectives is to
+   verify that our code is workable enough for clients to use. &nbsp; This will also be used so we dont have to run though test everytime ourselfs<br> 
+<h3>1.2 Test Environment</h3>
+  To run our test cases we will be using javascript <br>
+<h3>1.3 Test Personnel</h3>
+  For testing we will be switching off on who test but everyone at some point will 
+  write test code and implement the test cases.<br>
+<h3>1.4 Acceptance Criteria</h3>
+  Based off of how critical the errors are will depend on its Acceptance.<br>
+  For account login and registration no ammount of erros will be acceptable <br>
+<br>
+</div>
+<h2>2. Test Cases </h2>
+The test cases are the partitioning of the verification of the software
+into manageable sections.&nbsp; Often these sections correspond to the
+set of active use case scenarios, but can be organized as the test
+developer sees fit.&nbsp; Test cases should be in place to cover all of
+the software verification methods.&nbsp; Even non-execution based
+testing methods (i.e., inspection/analysis) may be detailed here.&nbsp;
+The intent is for the test case procedures to provide a repeatable
+verification of the software specification.<br>
+<br>
+For each test case describe the following:<br>
+<!-- TEST CASE 1-->
+<br>
+<span style="font-weight: bold;">Number:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+001<br>
+<span style="font-weight: bold;">Name:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+User-Registration-Short-Password<br>
+<span style="font-weight: bold;">Description:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+In this test case we will create an account with a password under 8 chars to ensure the creation isn't allowed <br>
+<span style="font-weight: bold;">Initial Conditions:</span> No special conditions are required for this test<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+No prior cases are need before being ran<br>
+<span style="font-weight: bold;">Input Data:&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+First name: test <br>
+last name: case <br>
+email: test@gmail.com<br>
+Password: 1234<br>
+confirm password: 1234<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<span style="font-weight: bold;">Specifications:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+<span style="font-weight: bold;">Procedure:&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>open the registration page and verify you are logged out<br>
+Enter above input data<br>
+A error showing that the passwords aren't long enough should appear <br>
+<br>
+<!-- TEST CASE 2-->
+<hr>
+<br>
+<span style="font-weight: bold;">Number:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+002<br>
+<span style="font-weight: bold;">Name:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+User-Registration-Empty-Slot<br>
+<span style="font-weight: bold;">Description:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+In this test case we will create an account an empty feild and should be promoted with an error message telling us so <br>
+<span style="font-weight: bold;">Initial Conditions:</span> No special conditions are required for this test<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+No prior cases are need before being ran<br>
+<span style="font-weight: bold;">Input Data:&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+First name: test <br>
+last name:  <br>
+email: test@gmail.com<br>
+Password: 1234<br>
+confirm password: 1234<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<span style="font-weight: bold;">Specifications:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+<span style="font-weight: bold;">Procedure:&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>open the registration page and verify you are logged out<br>
+Enter above input data<br>
+A error showing that fields are not filled out<br>
+verify further fill in the previous box and remove another until all have been tested<br>
+ 
+<!-- TEST CASE 3-->
+<hr>
+<br>
+<span style="font-weight: bold;">Number:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+003<br>
+<span style="font-weight: bold;">Name:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+User-Registration-Unmatched-Passwords<br>
+<span style="font-weight: bold;">Description:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+In this test case we will try to create an account with the password feild and the Verify Password boxes different <br>
+<span style="font-weight: bold;">Initial Conditions:</span> No special conditions are required for this test<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+No prior cases are need before being ran<br>
+<span style="font-weight: bold;">Input Data:&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+First name: test <br>
+last name: case  <br>
+email: test@gmail.com<br>
+Password: abcd1234<br>
+confirm password: 1234abcd<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<span style="font-weight: bold;">Specifications:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+<span style="font-weight: bold;">Procedure:&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>open the registration page and verify you are logged out<br>
+Enter above input data<br>
+A error showing that your passwords do not match should appear <br>
+ 
+<!-- TEST CASE 4-->
+<hr>
+<br>
+<span style="font-weight: bold;">Number:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+004<br>
+<span style="font-weight: bold;">Name:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+User-Registration-Correct<br>
+<span style="font-weight: bold;">Description:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+In this test case we will try to create an account with all feilds properly filled out <br>
+<span style="font-weight: bold;">Initial Conditions:</span> No special conditions are required for this test<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+No prior cases are need before being ran<br>
+<span style="font-weight: bold;">Input Data:&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+First name: test <br>
+last name: case  <br>
+email: test@gmail.com<br>
+Password: abcd1234<br>
+confirm password: abcd1234<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<span style="font-weight: bold;">Specifications:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+<span style="font-weight: bold;">Procedure:&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>open the registration page and verify you are logged out<br>
+Enter above input data<br>
+When entered you should be redirected to the login page, or dashboard<br>
+ 
+<!-- TEST CASE 5-->
+<hr>
+<br>
+<span style="font-weight: bold;">Number:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+005<br>
+<span style="font-weight: bold;">Name:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+User-Registration-Correct-Repeat<br>
+<span style="font-weight: bold;">Description:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+In this test case we will try to create an account with the same email as another account<br>
+<span style="font-weight: bold;">Initial Conditions:</span> Before this case is ran please run test case 4: User-Registration-Correct<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+<span style="font-weight: bold;">Input Data:&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+First name: test <br>
+last name: case  <br>
+email: test@gmail.com<br>
+Password: abcd1234<br>
+confirm password: abcd1234<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<span style="font-weight: bold;">Specifications:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+<span style="font-weight: bold;">Procedure:&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>open the registration page and verify you are logged out<br>
+Enter above input data<br>
+You should be notified that an account has already been created with that email<br>
+ 
+<!-- TEST CASE 6-->
+<hr>
+<br>
+<span style="font-weight: bold;">Number:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+006<br>
+<span style="font-weight: bold;">Name:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+User-Login-Invalid-Email<br>
+<span style="font-weight: bold;">Description:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+We are looking to see if the website will log us in an account doesn't exist with the given email<br>
+<span style="font-weight: bold;">Initial Conditions:</span>Verify that the account doesn't exist on the database<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+<span style="font-weight: bold;">Input Data:&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+email: test@gmail.com<br>
+Password: abcd1234<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<span style="font-weight: bold;">Specifications:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+<span style="font-weight: bold;">Procedure:&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>Go to the login page<br>
+Enter account info above<br>
+You should be notified should be alerted that there is no account created with that email<br>
+ 
+<!-- TEST CASE 7-->
+<hr>
+<br>
+<span style="font-weight: bold;">Number:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+007<br>
+<span style="font-weight: bold;">Name:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+User-Login-Invalid-Password<br>
+<span style="font-weight: bold;">Description:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+We want to make sure that the user can't sign in if an invalid password is entered <br>
+<span style="font-weight: bold;">Initial Conditions:</span>Run test case 4 and verify that an account is created with the credentials <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+<span style="font-weight: bold;">Input Data:&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+email: test@gmail.com<br>
+Password: abcdefghijklmnop<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<span style="font-weight: bold;">Specifications:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+<span style="font-weight: bold;">Procedure:&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>Go to the login page<br>
+Enter account info above<br>
+You should be alreated that your information was entered incorrectly<br>
+ 
+<br>
+ 
+<!-- TEST CASE 8-->
+<hr>
+<br>
+<span style="font-weight: bold;">Number:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+008<br>
+<span style="font-weight: bold;">Name:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+User-Login-Valid<br>
+<span style="font-weight: bold;">Description:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+User logs in with a correct account info <br>
+<span style="font-weight: bold;">Initial Conditions:</span>Run test case 4 and verify that an account is created with the credentials <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+<span style="font-weight: bold;">Input Data:&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+email: test@gmail.com<br>
+Password: abcd1234<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+<span style="font-weight: bold;">Specifications:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+<span style="font-weight: bold;">Procedure:&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br>Go to the login page<br>
+Enter account info above<br>
+Should be redirected to the dashboard page<br>
+ 
+<br>
+<br>
+<h2>Revision History</h2>
+<br>
+<table style="width: 100%; text-align: left;" border="1" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <th style="vertical-align: top;">Revision</th>
+      <th style="vertical-align: top;">Date<br>
+      </th>
+      <th style="vertical-align: top;">Change Description<br>
+      </th>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Start of test cases<br>
+      </td>
+      <td style="vertical-align: top;">2/28/2020<br>
+      </td>
+      <td style="vertical-align: top;">. Lots of account testing <br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<big><big><br>
+</big></big>
+<hr style="width: 100%; height: 2px;">
+<div style="text-align: center;"><span style="font-weight: bold;">Page
+Author/Creator:</span> <a
+ href="http://homes.soic.indiana.edu/aabhutta/">Adeel Bhutta</a><span
+ style="font-weight: bold;"><br>
+Last Modified:</span> 8/23/2016</div>
+<br>
+</body>
+</html>
+ 
+ 
+ 
+ 
+
