@@ -24,6 +24,46 @@ router.get('/registration', (req, res) => {
   })
 })
 
+// About Page
+router.get('/about-page', (req, res) => {
+  res.render('about-page', {
+    layout: 'about-page',
+  })
+})
+
+// About Renting Page
+router.get('/about-renting', (req, res) => {
+  res.render('about-renting', {
+    layout: 'about-renting',
+  })
+})
+
+// About Selling Page
+router.get('/about-selling', (req, res) => {
+  res.render('about-selling', {
+    layout: 'about-selling',
+  })
+})
+
+// Housing Page
+router.get('/housing', (req, res) => {
+  res.render('housing', {
+    layout: 'housing',
+  })
+})
+
+// Dashboard Page
+router.get('/dashboard', (req, res) => {
+  try {
+    res.render('dashboard', {
+      name:  req.name
+    })
+  }
+  catch (e) {
+    console.log(e)
+  }
+})
+
 // Register Handle
 router.post('/registration', (req, res) => {
 

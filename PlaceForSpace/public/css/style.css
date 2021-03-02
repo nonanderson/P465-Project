@@ -58,6 +58,7 @@ body{
     flex-wrap: nowrap;
     justify-content: center;
     align-content: center;
+    text-align: center;
 }
 
 #questch {
@@ -107,16 +108,8 @@ form label{
     text-align:right;
 }
 
-/*used on registration and login page*/
-.grid{
-    display: grid;
-    
-    justify-content: center;
-    /*Spacing for the columns <label> then <input>*/
-    grid-template-columns: 200px 200px;
-    /*Spacing between the input boxes*/
-    row-gap: 20px;
-}
+
+
 
 
 .navbar{
@@ -166,7 +159,14 @@ form label{
     display: block;
     text-align: left;
 }
-
+/*used on regisation and login page*/
+.form-group{
+    display: grid;
+    margin: 10px;
+    grid-template-columns: 150px 200px;
+    row-gap: 10px;
+    justify-content: center;
+}
 
 /* HOVER EFFECTS */
 
@@ -197,4 +197,15 @@ form label{
 
 .dropdown a:hover {
     color: #fff2cc;
+}
+
+.google-option {
+    text-align: center;
+}
+
+.google-button {
+    align-self: center;
+    text-decoration: none;
+    background-color: blue;
+    color: white;
 }

@@ -88,6 +88,7 @@ app.use('/', require('./routes/index'))
 app.use('/', require('./routes/users'))
 app.use('/auth', require('./routes/auth'))
 
+app.use(express.static('views/images'))
 
 const PORT = process.env.PORT || 3000
 
