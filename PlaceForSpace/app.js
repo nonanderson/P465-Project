@@ -11,7 +11,10 @@ const flash = require('connect-flash')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')//(session)
 const connectDB = require('./config/db')
-
+const crypto = require('crypto')  //avoid duplicate file names
+const multer = require('multer')
+const GridFsStorage = require('multer-gridfs-storage')
+const Grid = require('gridfs-stream')
 
 
 
@@ -23,6 +26,7 @@ require('./config/google_passport')(google_passport)
 require('./config/passport')(passport)
 
 connectDB()
+conn = mongoose.createConnection(process.env.MONGO_URI)
 
 const app = express()
 
@@ -87,6 +91,63 @@ app.use(function(req, res, next) {
 app.use('/', require('./routes/index'))
 app.use('/', require('./routes/users'))
 app.use('/auth', require('./routes/auth'))
+
+let gfs
+
+conn.once('open', () => {
+// init stream
+gfs = Grid(conn.db, mongoose.mongo)
+gfs.collection('uploads')
+})
+
+// Storage engine
+const storage = new GridFsStorage({
+url: process.env.MONGO_URI,
+file: (req, file) => {
+    return new Promise((resolve, reject) => {
+    crypto.randomBytes(16, (err, buf) => {
+        if (err) {
+        return reject(err)
+        }
+        const filename = buf.toString('hex') + path.extname(file.originalname)
+        const fileInfo = {
+        filename: filename,
+        bucketName: 'uploads'
+        }
+        resolve(fileInfo)
+    })
+    })
+}
+})
+const upload = multer({ storage })
+
+// Upload image to DB
+app.post('/upload', upload.single('file'), (req, res) => {
+  //res.json({file: req.file})
+  //redirect home
+  res.redirect('/')
+})
+
+// Display Image
+app.get('/images/:filename', (req, res) => {
+  gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
+    // Check if file
+    if (!file || file.length === 0) {
+      return res.status(404).json({
+        err: 'No file exists'
+      })
+    }
+
+    if (file.contentType === 'image/jpeg' || file.contentType === 'image/png') {
+      const readstream = gfs.createReadStream(file.filename)
+      readstream.pipe(res)
+    } else {
+      res.status(404).json({
+        err: 'Not an image'
+      })
+    }
+  })
+})
 
 app.use(express.static('views/images'))
 

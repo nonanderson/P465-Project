@@ -64,6 +64,18 @@ router.get('/dashboard', (req, res) => {
   }
 })
 
+// Upload Page
+router.get('/file-upload', (req, res) => {
+  try {
+    res.render('file-upload', {
+      name:  req.name
+    })
+  }
+  catch (e) {
+    console.log(e)
+  }
+})
+
 // Register Handle
 router.post('/registration', (req, res) => {
 
