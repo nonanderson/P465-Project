@@ -44,6 +44,15 @@ body{
     flex-direction: column;
 }
 
+
+.login-container {
+    /*background-color: #fff2cc;*/
+    border: 2px solid #fffaeb;
+    width: 1080px;
+    margin: 0 auto;
+}
+
+
 .login-container a {
     text-align: center;
     text-decoration: none;
@@ -65,7 +74,25 @@ body{
     align-self: center;
 }
 
+/* #fffaeb */
 .register-button {
+    border: 2px solid #fff2cc;
+    color: #0c7742;
+    background-color: #fff2cc;
+    padding: .25rem .25rem;
+    border-radius: .5rem;
+    text-align: center;
+    margin-left: 2em;
+    text-decoration: none;
+}
+
+.register-button p  {
+    text-decoration: none;
+    color:#0c7742; 
+    margin: 0.25em;
+}
+
+.login-button {
     border: 2px solid #fff2cc;
     color: #0c7742;
     background-color: #fff2cc;
@@ -76,10 +103,10 @@ body{
     text-decoration: none;
 }
 
-.register-button p{
+.login-button p{
     text-decoration: none;
     color:#0c7742; 
-    margin: 0.5em;
+    margin: 0.25em;
 }
 
 .container{
@@ -88,6 +115,8 @@ body{
 
 form {
     text-align: center;
+    width: 100%;
+    background-color: blueviolet;
 } 
 
 form input {
@@ -96,21 +125,16 @@ form input {
     background-color: #fff2cc;
     padding: .5rem .5rem;
     border-radius: .5rem;
-    /* text-align: center; */
     margin-left: 2em;
     text-decoration: none;
-    justify-self: right;
 }
-
 
 form label{
     /*Places the lables alined to the input box*/
     text-align:right;
+    justify-self: right;
+    align-self: center;
 }
-
-
-
-
 
 .navbar{
     background-color: #fff2cc;
@@ -143,7 +167,6 @@ form label{
     color: inherit;
 }
 
-
 .dropdown-content{
     display: none;
     position: absolute;
@@ -161,9 +184,9 @@ form label{
 }
 /*used on regisation and login page*/
 .form-group{
-    display: grid;
+    /*display: grid;*/
     margin: 10px;
-    grid-template-columns: 150px 200px;
+    grid-template-columns: 200px 200px;
     row-gap: 10px;
     justify-content: center;
 }
@@ -175,6 +198,14 @@ form label{
 }
 
 .register-button:hover {
+    background-color:#62df96;
+}
+
+.login-button:hover p {
+    color:#2f9459;
+}
+
+.login-button:hover {
     background-color:#62df96;
 }
 
