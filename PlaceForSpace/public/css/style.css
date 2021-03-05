@@ -5,14 +5,14 @@
 }
 
 body{
-    color: #fff2cc;
+    color: #fffaeb;
     font-family: Lato;
     margin: auto;
     padding: 0 40px;
     max-width: 1800px;
     /*background-repeat: no-repeat;
     background: repeating-linear-gradient(73deg, #1a5a75, #18ad39 15%, #3cf6be 20%);*/
-    background: linear-gradient(to right, #0c7742,#2f9459);
+    background: linear-gradient(to right, #0c7742, #2f9459)
 }
 
 .pfs-logo {
@@ -35,25 +35,25 @@ body{
     align-items: center;
 }
 
+/*
 .homepage-layout {
-    text-align: center;
 }
+*/
 
 .full-height-grow {
     display: flex;
     flex-direction: column;
 }
 
-
 .login-container {
     border: 2px solid #fffaeb;
     background-color: #fffaeb;
+    max-width: 300px;
     border-radius: 10px;
     width: 40%;
     color: #0c7742;
     margin: 0 auto;
 }
-
 
 .login-container a {
     text-align: center;
@@ -61,15 +61,26 @@ body{
     color: inherit;
 }
 
+.register-container {
+    border: 2px solid #fffaeb;
+    background-color: #fffaeb;
+    max-width: 300px;
+    border-radius: 10px;
+    width: 40%;
+    color: #0c7742;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
 .register-option {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
+    color: #0c7742;
+    align-self: center;
+    font-size: 12px;
+}
+
+.register-option a {
+    align-self: center;
+    justify-content: baseline;
 }
 
 #questch {
@@ -80,15 +91,21 @@ body{
 /* #fffaeb */
 .register-button {
     border: 2px solid #fffaeb;
-    color: #0c7742;
-    background-color: #fffaeb;
+    border-radius: 50px;
+    height: 40px;
+    width: 250px;
+    color: #fffaeb;
+    background-color: #0c7742;
     align-self: center;
-    text-decoration: none;
-    font-size: 12px;
+}
+
+.register-question {
+    align-items: baseline;
+    align-self: center;
+    text-align: center;
 }
 
 .register-button p  {
-    text-decoration: none;
     color:#0c7742; 
     margin: 0.25em;
 }
@@ -100,7 +117,8 @@ body{
     padding: .5rem .5rem;
     border-radius: 50px;
     text-align: center;
-    width: 75%;
+    align-items: center;
+    width: 250px;
     height: 40px;
     text-decoration: none;
 }
@@ -117,7 +135,7 @@ body{
 
 form {
     text-align: center;
-    width: 100%;
+    align-self: center;
 } 
 
 form input {
@@ -128,7 +146,9 @@ form input {
     border-radius: 50px;
     height: 40px;
     text-decoration: none;
-    width: 80%;
+    width: 250px;
+    align-self: center;
+    text-align: center;
 }
 
 form label{
@@ -136,10 +156,13 @@ form label{
     text-align:right;
     justify-self: right;
     align-self: center;
+    display: inline-block;
+    flex-direction: column;
+    font-size: 12px;
 }
 
 .navbar{
-    background-color: #fff2cc;
+    background-color: #fffaeb;
 }
 .navbar a {
     font-size: 32x;
@@ -173,33 +196,33 @@ form label{
     display: none;
     position: absolute;
     /*subject to change */
-    background-color:  #62df96;
+    background-color:  #8ddca4;
     max-width: 160px;
     padding: .5rem .5rem;
     border-radius: .5rem;
 }
 
-.dropdown-content a{
+.dropdown-content a {
     float: none;
     display: block;
     text-align: left;
 }
 /*used on regisation and login page*/
-.form-group{
-    /*display: grid;*/
+.form-group {
+    display: inline-block;
     margin: 10px;
     row-gap: 10px;
-    justify-content: center;
+    align-self: center;
 }
 
 /* HOVER EFFECTS */
 
 .register-button:hover p {
-    /*color:#2f9459;*/
+    color:#2f9459;
 }
 
 .register-button:hover {
-    /*background-color:#62df96;*/
+    background-color:#8ddca4;
 }
 
 .login-button:hover p {
@@ -207,15 +230,15 @@ form label{
 }
 
 .login-button:hover {
-    background-color:#62df96;
+    background-color:#8ddca4;
 }
 
 .login-container a:hover{
-    color: rgb(175, 233, 127);
+    color: #8ddca4;
 }
 
 .main-nav a:hover{
-    color: rgb(175, 233, 127);
+    color: #8ddca4;
 }
 
 .dropdown:hover .dropdown-content{
@@ -224,11 +247,11 @@ form label{
 }
 
 .dropdown:hover .dropdownbtn {
-    color:  rgb(175, 233, 127);
+    color:  #8ddca4;
 }
 
 .dropdown a:hover {
-    color: #fff2cc;
+    color: #fffaeb;
 }
 
 .google-option {
@@ -240,6 +263,9 @@ form label{
 .google-button {
     align-self: center;
     text-decoration: none;
-    background-color: blue;
-    color: white;
+    color: #0c7742;
+}
+
+.google-button:hover {
+    color: #8ddca4;
 }

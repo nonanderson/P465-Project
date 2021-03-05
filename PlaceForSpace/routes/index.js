@@ -1,9 +1,6 @@
 const express = require('express')
 const router = express.Router()
 
-
-
-
 // @desc    Dashboard
 // @route   GET /dashboard
 router.get('/', async (req, res) => {
