@@ -1,0 +1,6 @@
+meeting minutes for 03/08
+
+- Adam will continue to work on listing stuff and images
+- Connor will continue to work on registration
+- Nona/Tanner will work on post-log in display for users
+  - perhaps a profile page
