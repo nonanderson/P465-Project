@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const morgan = require('morgan')
 const exphbs = require('express-handlebars')
-//const methodOverride = require('method-override')
+const methodOverride = require('method-override')
 const passport = require('passport')
 const google_passport = require('passport') // honestly, I don't know if this should be require('google_passport') or require('passport'). Try changing if errors persist
 const flash = require('connect-flash')
@@ -79,6 +79,9 @@ app.use(flash())
 // Static folder
 app.use(express.static(path.join(__dirname, 'public')))
 
+// Allow method-override
+app.use(methodOverride('_method'))
+
 // Global Vars
 app.use(function(req, res, next) {
   res.locals.success_msg = req.flash('success_msg');
@@ -95,9 +98,10 @@ app.use('/auth', require('./routes/auth'))
 let gfs
 
 conn.once('open', () => {
-// init stream
-gfs = Grid(conn.db, mongoose.mongo)
-gfs.collection('uploads')
+  // init stream
+  gfs = Grid(conn.db, mongoose.mongo)
+  gfs.collection('uploads')
+  exports.gfs = gfs
 })
 
 // Storage engine
@@ -125,7 +129,7 @@ const upload = multer({ storage })
 app.post('/upload', upload.single('file'), (req, res) => {
   //res.json({file: req.file})
   //redirect home
-  res.redirect('/')
+  res.redirect('/file-upload')
 })
 
 // Display Image
@@ -149,6 +153,19 @@ app.get('/images/:filename', (req, res) => {
   })
 })
 
+// Delete file
+app.delete('/images/:id', (req, res) => {
+  console.log("TRYING TO DELETE")
+  gfs.remove({ _id: req.params.id, root: 'uploads' }, (err, gridStore) => {
+    if (err) {
+      return res.status(404).json({ err: err });
+    }
+
+    res.redirect('/file-upload');
+  });
+});
+
+
 app.use(express.static('views/images'))
 
 const PORT = process.env.PORT || 3000
@@ -157,4 +174,3 @@ app.listen(
     PORT,
     console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
 )
-

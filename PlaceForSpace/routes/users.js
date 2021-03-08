@@ -3,6 +3,12 @@ const router = express.Router()
 const bcrypt = require('bcryptjs');
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 const passport = require('passport');
+const multer = require('multer')
+const GridFsStorage = require('multer-gridfs-storage')
+const Grid = require('gridfs-stream')
+const methodOverride = require('method-override')
+
+
 
 // Load User model
 const User = require('../models/User')
@@ -66,10 +72,30 @@ router.get('/dashboard', (req, res) => {
 
 // Upload Page
 router.get('/file-upload', (req, res) => {
+  const gridConn = require('../app')
+  const gfs = gridConn.gfs
   try {
-    res.render('file-upload', {
-      name:  req.name
+    gfs.files.find().toArray((err, files) => {
+      // Check if files
+      if (!files || files.length === 0) {
+        res.render('file-upload', {files: false})
+      } 
+      else {
+        files.map(file => {
+          if(file.contentType === 'image/jpeg' || file.contentType === 'image/png') {
+            file.isImage = true;
+          }
+          else {
+            file.isImage = false;
+          }
+        })
+        res.render('file-upload', {files: files})
+      }
+      
     })
+    // res.render('file-upload', {
+    //   name:  req.name
+    // })
   }
   catch (e) {
     console.log(e)

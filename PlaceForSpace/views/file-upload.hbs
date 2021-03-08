@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Upload Test</title>
 </head>
+
 <body>
     <div class="containter">
         <div class="row">
@@ -18,6 +19,24 @@
                     </div>
                     <input type="submit" value="Submit" class="btn btn-primary">
                 </form>
+                <hr>
+                {{#if files}}
+                    {{#each files}}
+                        <div class="card card-body mb-3">
+                            {{#if this.isImage}}
+                                <img src="images/{{filename}}" style="width:100px;height:100px;">
+                            {{else}}
+                                <p>{{filename}}</p>
+                            {{/if}}
+                            <form method="POST" action="/images/{{_id}}?_method=DELETE">
+                            <button class="btn btn-danger btn-block mt-4">DELETE</button>
+                            </form>
+                        </div>
+                    {{/each}}
+                {{else}}
+                    <p>No files found</p>
+                {{/if}}
+                </hr>
             </div>
         </div>
     </div>
