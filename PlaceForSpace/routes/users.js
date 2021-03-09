@@ -3,11 +3,6 @@ const router = express.Router()
 const bcrypt = require('bcryptjs');
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 const passport = require('passport');
-const multer = require('multer')
-const GridFsStorage = require('multer-gridfs-storage')
-const Grid = require('gridfs-stream')
-const methodOverride = require('method-override')
-
 
 
 // Load User model
@@ -21,85 +16,6 @@ router.get('/login', ensureGuest, (req, res) => {
   res.render('login', {
     layout: 'login',
   })
-})
-
-// Registration Page
-router.get('/registration', (req, res) => {
-  res.render('registration', {
-    layout: 'registration',
-  })
-})
-
-// About Page
-router.get('/about-page', (req, res) => {
-  res.render('about-page', {
-    layout: 'about-page',
-  })
-})
-
-// About Renting Page
-router.get('/about-renting', (req, res) => {
-  res.render('about-renting', {
-    layout: 'about-renting',
-  })
-})
-
-// About Selling Page
-router.get('/about-selling', (req, res) => {
-  res.render('about-selling', {
-    layout: 'about-selling',
-  })
-})
-
-// Housing Page
-router.get('/housing', (req, res) => {
-  res.render('housing', {
-    layout: 'housing',
-  })
-})
-
-// Dashboard Page
-router.get('/dashboard', (req, res) => {
-  try {
-    res.render('dashboard', {
-      name:  req.name
-    })
-  }
-  catch (e) {
-    console.log(e)
-  }
-})
-
-// Upload Page
-router.get('/file-upload', (req, res) => {
-  const gridConn = require('../app')
-  const gfs = gridConn.gfs
-  try {
-    gfs.files.find().toArray((err, files) => {
-      // Check if files
-      if (!files || files.length === 0) {
-        res.render('file-upload', {files: false})
-      } 
-      else {
-        files.map(file => {
-          if(file.contentType === 'image/jpeg' || file.contentType === 'image/png') {
-            file.isImage = true;
-          }
-          else {
-            file.isImage = false;
-          }
-        })
-        res.render('file-upload', {files: files})
-      }
-      
-    })
-    // res.render('file-upload', {
-    //   name:  req.name
-    // })
-  }
-  catch (e) {
-    console.log(e)
-  }
 })
 
 // Register Handle

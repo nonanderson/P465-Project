@@ -79,7 +79,7 @@ app.use(flash())
 // Static folder
 app.use(express.static(path.join(__dirname, 'public')))
 
-// Allow method-override
+// Allow method-override for deletion from db
 app.use(methodOverride('_method'))
 
 // Global Vars
@@ -155,7 +155,6 @@ app.get('/images/:filename', (req, res) => {
 
 // Delete file
 app.delete('/images/:id', (req, res) => {
-  console.log("TRYING TO DELETE")
   gfs.remove({ _id: req.params.id, root: 'uploads' }, (err, gridStore) => {
     if (err) {
       return res.status(404).json({ err: err });
