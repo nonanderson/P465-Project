@@ -111,9 +111,23 @@ router.post('/login', (req, res, next) => {
     successRedirect: '/dashboard',
     failureRedirect: '/login',
     failureFlash: true
-  })(req, res, next);
+  })
+  (req, res, next);
 });
 
+/*
+https://github.com/jaredhanson/passport/issues/482
+// Endpoint to login
+router.post('/login',
+  passport.authenticate('local'),
+  function(req, res) {
+    res.sesssion.save() yada yada check out the git link and find it 
+    This may work or it may work once the server is in deploment
+    res.send(req.user);
+  }
+);
+
+*/
 // Logout
 router.get('/logout', (req, res) => {
   req.logout();

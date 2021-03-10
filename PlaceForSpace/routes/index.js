@@ -9,10 +9,10 @@ const Listing = require('../models/Listing')
 
 // @desc    Dashboard
 // @route   GET /dashboard
-router.get('/', async (req, res) => {
+router.get('/', ensureAuth,async (req, res) => {
   try {
     res.render('dashboard', {
-      //name: req.User.firstName,
+      firstName: req.user.firstName,
     })
   }
   catch (e) {
@@ -56,10 +56,10 @@ router.get('/housing', (req, res) => {
 })
 
 // Dashboard Page
-router.get('/dashboard', (req, res) => {
+router.get('/dashboard', ensureAuth, async (req, res) => {
   try {
     res.render('dashboard', {
-      name: req.name
+      firstName: req.user.firstName,
     })
   }
   catch (e) {

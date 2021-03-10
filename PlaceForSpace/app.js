@@ -9,7 +9,7 @@ const passport = require('passport')
 const google_passport = require('passport') // honestly, I don't know if this should be require('google_passport') or require('passport'). Try changing if errors persist
 const flash = require('connect-flash')
 const session = require('express-session')
-const MongoStore = require('connect-mongo')//(session)
+const MongoStore = require('connect-mongo').default;//(session)
 const connectDB = require('./config/db')
 const crypto = require('crypto')  //avoid duplicate file names
 const multer = require('multer')
@@ -61,7 +61,7 @@ app.use(
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: false,
-    //store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    store: MongoStore.create({ mongoUrl: process.env.MONGO_URI })
   })
 )
 
@@ -79,11 +79,13 @@ app.use(flash())
 // Static folder
 app.use(express.static(path.join(__dirname, 'public')))
 
+
 // Allow method-override for deletion from db
 app.use(methodOverride('_method'))
 
 // Global Vars
 app.use(function(req, res, next) {
+  res.locals.user = req.user || null
   res.locals.success_msg = req.flash('success_msg');
   res.locals.error_msg = req.flash('error_msg');
   res.locals.error = req.flash('error');
