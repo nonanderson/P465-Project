@@ -1,7 +1,11 @@
 const mongoose = require('mongoose');
 
 const ListingSchema = new mongoose.Schema({
-  userEmail: {
+  email: {
+    type: String,
+    required: true
+  },
+  name: {
     type: String,
     required: true
   },

@@ -130,7 +130,6 @@ const upload = multer({ storage })
 // Upload image to DB
 app.post('/upload', upload.single('file'), (req, res) => {
   //res.json({file: req.file})
-  //redirect home
   res.redirect('/file-upload')
 })
 

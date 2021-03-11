@@ -6,6 +6,8 @@ const Grid = require('gridfs-stream')
 const methodOverride = require('method-override')
 const { ensureAuth } = require('../middleware/auth')
 const Listing = require('../models/Listing')
+const { query } = require('express')
+
 
 // @desc    Dashboard
 // @route   GET /dashboard
@@ -50,10 +52,46 @@ router.get('/about-selling', (req, res) => {
 
 // Housing Page
 router.get('/housing', (req, res) => {
-  res.render('housing', {
-    layout: 'housing',
-  })
+  var noMatch = null;
+    if(req.query.search) {
+        const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+        // Get all campgrounds from DB
+        Listing.find({city: regex}, function(err, allListings){
+           if(err){
+               console.log(err);
+           } else {
+              if(allListings.length < 1) {
+                  noMatch = "No listings match that query, please try again.";
+              }
+              res.render("housing",{Listing:allListings, noMatch: noMatch});
+              console.log(allListings)
+           }
+        });
+    } else {
+        // Get all listings from DB
+        Listing.find({}, function(err, allListings){
+           if(err){
+               console.log(err);
+           } else {
+              res.render("housing",{Listing:allListings, noMatch: noMatch});
+           }
+        });
+    }
 })
+
+// router.post('/housing', (req, res) => {
+//   const { inquiry } = req.body
+
+//   Listing.find({city: inquiry}, (error, data) => {
+//     if(error){
+//       console.log(error)
+//     }
+//     else{
+//       console.log(data)
+//     }
+//   })
+//   res.redirect('/housing')
+// })
 
 // Dashboard Page
 router.get('/dashboard', ensureAuth, async (req, res) => {
@@ -107,11 +145,12 @@ router.get('/add-listing', (req, res) => {
 // Submit listing
 router.post('/add-listing', (req, res) => {
 
-  const { userEmail, streetAddress, city, state, pictures } = req.body
+  const { email, name, streetAddress, city, state, pictures } = req.body
   let errors = []
 
   //Check required fields
-  if (!userEmail || !streetAddress || !city || !state) {
+  if (!email || !name || !streetAddress || !city || !state) {
+    console.log(streetAddress)
     errors.push({ msg: 'Please fill all fields' })
   }
 
@@ -119,14 +158,16 @@ router.post('/add-listing', (req, res) => {
     res.render('add-listing', {
       layout: 'add-listing',
       errors,
-      userEmail,
+      email,
+      name,
       streetAddress,
       city,
       state
     })
   } else {
     const newListing = new Listing({
-      userEmail,
+      email,
+      name,
       streetAddress,
       city,
       state,
@@ -146,5 +187,10 @@ router.post('/add-listing', (req, res) => {
       .catch(err => console.log(err));
   }
 });
+
+
+function escapeRegex(text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
 
 module.exports = router;

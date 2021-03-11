@@ -7,12 +7,19 @@
 </head>
 
 <body>
-
-
-  <h1>View the Listings Here:</h1>
+  {{!-- <h1>View the Listings Here:</h1>
 
   <p>Long-term rentals</p>
-  <p>Short term-rentals</p>
+  <p>Short term-rentals</p> --}}
+
+  <form action="/housing" method="GET" class="form-inline">
+    <div class="form-group">
+      <input type="text" name="search" placeholder="Listing search..." class="form-control">
+      <input type="submit" value="Search" class="btn btn-default">
+    </div>
+  </form>
+
 
 </body>
+
 </html>
