@@ -55,8 +55,13 @@ router.get('/housing', (req, res) => {
   var noMatch = null;
     if(req.query.search) {
         const regex = new RegExp(escapeRegex(req.query.search), 'gi');
-        // Get all campgrounds from DB
-        Listing.find({city: regex}, function(err, allListings){
+        // Check multiple categories for relevant listings
+        Listing.find({$or:[
+          {city: regex},
+          {state: regex},
+          {zip: regex},
+          {name: regex}]},
+           function(err, allListings){
            if(err){
                console.log(err);
            } else {
@@ -147,13 +152,17 @@ router.get('/add-listing', (req, res) => {
 // Submit listing
 router.post('/add-listing', (req, res) => {
 
-  const { email, name, streetAddress, city, state, pictures } = req.body
+  const { email, name, streetAddress, city, state, zip, pictures } = req.body
   let errors = []
 
   //Check required fields
-  if (!email || !name || !streetAddress || !city || !state) {
-    console.log(streetAddress)
+  if (!email || !name || !streetAddress || !city || !state || !zip) {
     errors.push({ msg: 'Please fill all fields' })
+  }
+
+  if (!(/^\d+$/.test(zip)) || zip.length !== 5) {
+    console.log(zip)
+    errors.push({ msg: 'Please enter a valid zip code'})
   }
 
   if (errors.length > 0) {
@@ -164,7 +173,8 @@ router.post('/add-listing', (req, res) => {
       name,
       streetAddress,
       city,
-      state
+      state,
+      zip
     })
   } else {
     const newListing = new Listing({
@@ -173,6 +183,7 @@ router.post('/add-listing', (req, res) => {
       streetAddress,
       city,
       state,
+      zip,
       pictures
     });
 

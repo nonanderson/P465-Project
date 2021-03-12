@@ -21,6 +21,10 @@ const ListingSchema = new mongoose.Schema({
       type: String,
       required: true
   },
+  zip: {
+    type: String,
+    required: true
+  },
   pictures: {
     type: [String],
     default: undefined
