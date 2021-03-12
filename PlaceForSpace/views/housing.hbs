@@ -16,10 +16,37 @@
     <div class="form-group">
       <input type="text" name="search" placeholder="Listing search..." class="form-control">
       <input type="submit" value="Search" class="btn btn-default">
+        
+        {{!--<h4>{{Listing[0].state}}</h4>--}}
+        {{! my own little handlebar comment how cute}}
+        <ul class="housingList">
+          <!-- Cant figue out how to get the values by themself #yeet-->
+        {{#each Listing}}
+        <li>
+          <div class="housingCard">
+            <img src="house.jpg" style="width:100%">
+          {{!--<h1>{{lookup this 'city'}}</h1>--}}
+
+          {{! could look up how to make and use our own handle bar helper seen below}}
+            {{#each this}}
+              {{#if state}}
+                <h2>located in {{state}}</h2>
+              {{/if}}
+            {{/each}}
+          </div>
+        </li>
+        {{/each}} 
+        </ul>
     </div>
+
+    {{#listingTemp}}
+    {{/listingTemp}}
   </form>
-
-
+<script>
+  Handlebars.registerHelper("listingTemp", function(context, options) {
+    return <h4> + "This goes here:" +</h4>;
+  });
+</script>
 </body>
 
 </html>

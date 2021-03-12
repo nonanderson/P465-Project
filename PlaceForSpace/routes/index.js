@@ -73,7 +73,9 @@ router.get('/housing', (req, res) => {
            if(err){
                console.log(err);
            } else {
+              console.log(allListings)
               res.render("housing",{Listing:allListings, noMatch: noMatch});
+              
            }
         });
     }

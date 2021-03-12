@@ -215,6 +215,36 @@ form label{
     align-self: center;
 }
 
+/*HOUSING CARD*/
+
+.housingList{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+
+.housingList li {
+    float: left;
+    margin: 10px
+}
+
+
+.housingCard {
+    background-color: #fffaeb;
+    color: #0c7742;
+    max-width: 300px;
+    border-radius: 50px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+.housingCard img{
+    border-radius: 50px 0px;
+}
+
+
 /* HOVER EFFECTS */
 
 .register-button:hover p {

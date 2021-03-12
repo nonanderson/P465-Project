@@ -106,13 +106,17 @@ router.post('/registration', (req, res) => {
 });
 
 // Login
-router.post('/login', (req, res, next) => {
-  passport.authenticate('local', {
-    successRedirect: '/dashboard',
-    failureRedirect: '/login',
-    failureFlash: true
-  })
-  (req, res, next);
+router.post('/login', function(req, res, next) {
+  passport.authenticate('local', function(err, user, info) {
+    if (err) { return next(err); }
+    if (!user) { return res.redirect('/login'); }
+    req.logIn(user, function(err) {
+      if (err) { return next(err); }
+      var redirectTo = req.session.redirectTo ? req.session.redirectTo : '/dashboard';
+      delete req.session.redirectTo;
+      res.redirect(redirectTo);
+    });
+  })(req, res, next);
 });
 
 /*
