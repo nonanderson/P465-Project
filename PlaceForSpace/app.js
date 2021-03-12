@@ -27,7 +27,7 @@ require('./config/passport')(passport)
 
 connectDB()
 conn = mongoose.createConnection(process.env.MONGO_URI)
-
+//rip
 const app = express()
 
 // Logging

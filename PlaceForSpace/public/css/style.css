@@ -15,6 +15,10 @@ body{
     background: linear-gradient(to right, #0c7742, #2f9459)
 }
 
+.body{
+    text-align: center;
+}
+
 .pfs-logo {
     color: inherit;
     font-size: 1.25em;

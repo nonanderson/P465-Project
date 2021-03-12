@@ -24,15 +24,8 @@
         {{#each Listing}}
         <li>
           <div class="housingCard">
-            <img src="house.jpg" style="width:100%">
-          {{!--<h1>{{lookup this 'city'}}</h1>--}}
-
-          {{! could look up how to make and use our own handle bar helper seen below}}
-            {{#each this}}
-              {{#if state}}
-                <h2>located in {{state}}</h2>
-              {{/if}}
-            {{/each}}
+            <a href="/housing/{{this._id}}"><img src="house.jpg" style="width:100%"></a>
+            <h4>{{this.state}}</h4>
           </div>
         </li>
         {{/each}} 
@@ -42,11 +35,7 @@
     {{#listingTemp}}
     {{/listingTemp}}
   </form>
-<script>
-  Handlebars.registerHelper("listingTemp", function(context, options) {
-    return <h4> + "This goes here:" +</h4>;
-  });
-</script>
+
 </body>
 
 </html>

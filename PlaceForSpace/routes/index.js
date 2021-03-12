@@ -3,6 +3,8 @@ const router = express.Router()
 const multer = require('multer')
 const GridFsStorage = require('multer-gridfs-storage')
 const Grid = require('gridfs-stream')
+const google_passport = require('../config/google_passport')
+const passport = require('../config/passport')
 const methodOverride = require('method-override')
 const { ensureAuth } = require('../middleware/auth')
 const Listing = require('../models/Listing')
@@ -11,7 +13,7 @@ const { query } = require('express')
 
 // @desc    Dashboard
 // @route   GET /dashboard
-router.get('/', ensureAuth,async (req, res) => {
+router.get('/', ensureAuth ,async (req, res) => {
   try {
     res.render('dashboard', {
       firstName: req.user.firstName,
@@ -60,31 +62,51 @@ router.get('/housing', (req, res) => {
           {city: regex},
           {state: regex},
           {zip: regex},
-          {name: regex}]},
-           function(err, allListings){
-           if(err){
-               console.log(err);
-           } else {
-              if(allListings.length < 1) {
-                  noMatch = "No listings match that query, please try again.";
+          {name: regex}]})
+          .lean().exec(
+            function(err, allListings){
+            if(err){
+                console.log(err);
+            } else {
+               if(allListings.length < 1) {
+                   noMatch = "No listings match that query, please try again.";
+               }
+               res.render("housing",{Listing:allListings, noMatch: noMatch});
+               console.log(allListings)
               }
-              res.render("housing",{Listing:allListings, noMatch: noMatch});
-              console.log(allListings)
-           }
-        });
+            });
     } else {
         // Get all listings from DB
-        Listing.find({}, function(err, allListings){
-           if(err){
-               console.log(err);
-           } else {
-              console.log(allListings)
-              res.render("housing",{Listing:allListings, noMatch: noMatch});
-              
-           }
-        });
+        Listing.find({}).lean().exec(
+        function(err, allListings){
+            if(err){
+                console.log(err);
+            } else {
+               console.log(allListings)
+               res.render("housing",{Listing:allListings, noMatch: noMatch});
+               
+            }
+         }
+        );
     }
 })
+
+
+router.get("/housing/:id", function(req, res){
+  //find the campground with provided ID
+  console.log(req.params.id)
+  Listing.findById(req.params.id).lean().populate("comments").exec(function(err, foundListing){
+      if(err){
+          console.log(err);
+      } else {
+          console.log(foundListing)
+          //render show template with that campground
+          res.render("house", {listing: foundListing, layout: 'house'});
+      }
+  });
+});
+
+
 
 // router.post('/housing', (req, res) => {
 //   const { inquiry } = req.body

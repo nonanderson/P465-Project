@@ -107,7 +107,7 @@ router.post('/registration', (req, res) => {
 
 // Login
 router.post('/login', function(req, res, next) {
-  passport.authenticate('local', function(err, user, info) {
+  passport.authenticate('local', {scope: ['profile']}, function(err, user, info) {
     if (err) { return next(err); }
     if (!user) { return res.redirect('/login'); }
     req.logIn(user, function(err) {
