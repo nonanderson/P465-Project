@@ -37,13 +37,8 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 40px;
+    margin: 60px auto;
 }
-
-/*
-.homepage-layout {
-}
-*/
 
 .full-height-grow {
     display: flex;
