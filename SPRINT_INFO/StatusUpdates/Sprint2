@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Weekly Status 2/21/21</title>
+  <meta content="Default User" name="Nona Anderson">
+</head>
+<body>
+<h1 style="text-align: center;">Place for Space<br>
+</h1>
+<h1 style="text-align: center;">Weekly Status 3/07/21 - 3/14/21<br>
+</h1>
+<h2 style="text-align: center;">CSCI-P465/565 (Software Engineering I)</h2>
+<hr style="width: 100%; height: 2px;"><br>
+<h2><span style="font-weight: bold;">Status for week ending 3/14/21<br>
+</span></h2>
+Refactoring of login/registration page- complete. <br>
+Search functionality- complete <br>
+File uploading- complete <br>
+File upload page- fundamentally complete, interface in progress <br>
+User password change- in progress <br>
+Google maps- incomplete
+<a>
+
+<span style="color: rgb(0, 0, 0);"><big
+ style="font-weight: bold; text-decoration: underline;">Elements
+of&nbsp; Weekly Status:</big><br>
+</span></span>
+<ul>
+  <li><span style="font-weight: bold;">Project Function, Deliverable,
+Component Name</span><br>
+List in this column all of the activities you performed with respect to
+your project during this week.&nbsp; Activities can be anything worked
+on the project: a document, a deliverable, a component of your system,
+time with the customer, planning/scheduling meetings, etc.&nbsp; Please
+be honest whe reporting your status.&nbsp; For example, even if you are
+not yet supposed to be working on design per the process, please note a
+design activity if you did in fact work on the design that week -
+honest reporting will not adversely affect your grade.</li>
+  <li><span style="font-weight: bold;">Responsible Person</span><br>
+Identify one (<span style="font-weight: bold;">and only one</span>)
+person on your team that is responsible for the activity that was
+performed.&nbsp; If two people worked a task, break the task up so that
+the contributions of each individual may be independently logged.</li>
+  <li><span style="font-weight: bold;">Work-Hours Worked this Week</span><br>
+Indicate the how many work-hours (round to the 0.25 hour) were spent on
+the activitiy in the following process areas:<br>
+    <ul>
+      <li><span style="text-decoration: underline;">Project Planning</span>
+- Number of hours spent developing, documenting, and reviewing plans
+for the project</li>
+      <li><span style="text-decoration: underline;">Requirements
+Development</span> - Number of hours spent developing, documenting, and
+reviewing the customer needs</li>
+      <li><span style="text-decoration: underline;">Design</span> -
+Number of hours spent developing, documenting, and reviewing&nbsp;
+system and component design</li>
+      <li><span style="text-decoration: underline;">Implementation</span>
+- Number of hours spent actually coding, peer reviews, and/or unit
+testing</li>
+      <li><span style="text-decoration: underline;">Test</span> -
+Number of hours spent planning and executing the test</li>
+      <li><span style="text-decoration: underline;">Delivery</span> -
+Number of hours spent packaging the product and/or developing the user
+manual</li>
+      <li><span style="text-decoration: underline;">Project Management</span>
+- Number of hours spent developing weekly status, scheduling meetings,
+etc</li>
+      <li><span style="text-decoration: underline;">Change Control</span>
+- Number of&nbsp; hours spent implementing and documenting changes to
+the baselined artifacts</li>
+    </ul>
+  </li>
+</ul>
+<ul>
+  <li><span style="font-weight: bold;">Estimated Component Percent
+Complete</span><br>
+For each identified component, indicate the estimated completion
+percentage<br>
+  </li>
+</ul>
+<br>
+<table style="width: 100%; text-align: left;" border="1" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <td colspan="1" rowspan="2"
+ style="vertical-align: top; font-weight: bold;">Project
+Function, <br>
+Deliverable, or<br>
+Component
+Name<br>
+      </td>
+      <td colspan="1" rowspan="2"
+ style="vertical-align: top; font-weight: bold;">Responsible
+Person<br>
+      </td>
+      <td colspan="8" rowspan="1"
+ style="vertical-align: top; text-align: center; font-weight: bold;">Work-Hours
+Worked this Week<br>
+      </td>
+      <td colspan="1" rowspan="2"
+ style="vertical-align: top; font-weight: bold;">Estimated
+Component <br>
+Percent Complete<br>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; text-align: center; font-weight: bold;">Proj
+Plan<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: center; font-weight: bold;">Req
+Dev<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: center; font-weight: bold;">Design<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: center; font-weight: bold;">Impl<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: center; font-weight: bold;">Test<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: center; font-weight: bold;">Deliv<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: center; font-weight: bold;">Proj
+Mgmt<br>
+      </td>
+      <td
+ style="vertical-align: top; text-align: center; font-weight: bold;">Chng
+ Ctrl<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Design/Logo<br> <!--Task-->
+</td>
+<td style="vertical-align: top;">Nona Anderson<br> <!--Name-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Plan: Number of hours spent developing, documenting, and reviewing plans for the project-->
+</td>
+<td style="vertical-align: top;"><br> <!--Req Dev: Number of hours spent developing, documenting, and reviewing the customer needs-->
+</td>
+<td style="vertical-align: top;">1<br> <!--Design: Number of hours spent developing, documenting, and reviewing  system and component design-->
+</td>
+<td style="vertical-align: top;">2<br> <!--Impl: Number of hours spent actually coding, peer reviews, and/or unit testing-->
+</td>
+<td style="vertical-align: top;"><br> <!--Test: Number of hours spent planning and executing the test-->
+</td>
+<td style="vertical-align: top;"><br> <!--Deliv: Number of hours spent packaging the product and/or developing the user manual-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Mgmt: Number of hours spent developing weekly status, scheduling meetings, etc-->
+</td>
+<td style="vertical-align: top;"><br> <!--Chng Ctrl: Number of  hours spent implementing and documenting changes to the baselined artifacts-->
+</td>
+<td style="vertical-align: top;">100<br> <!--%-->
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Frontend/Layout<br> <!--Task-->
+</td>
+<td style="vertical-align: top;">Nona Anderson<br> <!--Name-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Plan: Number of hours spent developing, documenting, and reviewing plans for the project-->
+</td>
+<td style="vertical-align: top;">0.5<br> <!--Req Dev: Number of hours spent developing, documenting, and reviewing the customer needs-->
+</td>
+<td style="vertical-align: top;">0.5<br> <!--Design: Number of hours spent developing, documenting, and reviewing  system and component design-->
+</td>
+<td style="vertical-align: top;">6<br> <!--Impl: Number of hours spent actually coding, peer reviews, and/or unit testing-->
+</td>
+<td style="vertical-align: top;"><br> <!--Test: Number of hours spent planning and executing the test-->
+</td>
+<td style="vertical-align: top;"><br> <!--Deliv: Number of hours spent packaging the product and/or developing the user manual-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Mgmt: Number of hours spent developing weekly status, scheduling meetings, etc-->
+</td>
+<td style="vertical-align: top;">1<br> <!--Chng Ctrl: Number of  hours spent implementing and documenting changes to the baselined artifacts-->
+</td>
+<td style="vertical-align: top;">100<br> <!--%-->
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Frontend/Layout<br> <!--Task-->
+</td>
+<td style="vertical-align: top;">Tanner Hay<br> <!--Name-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Plan: Number of hours spent developing, documenting, and reviewing plans for the project-->
+</td>
+<td style="vertical-align: top;">0.5<br> <!--Req Dev: Number of hours spent developing, documenting, and reviewing the customer needs-->
+</td>
+<td style="vertical-align: top;">0.5<br> <!--Design: Number of hours spent developing, documenting, and reviewing  system and component design-->
+</td>
+<td style="vertical-align: top;">6<br> <!--Impl: Number of hours spent actually coding, peer reviews, and/or unit testing-->
+</td>
+<td style="vertical-align: top;"><br> <!--Test: Number of hours spent planning and executing the test-->
+</td>
+<td style="vertical-align: top;"><br> <!--Deliv: Number of hours spent packaging the product and/or developing the user manual-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Mgmt: Number of hours spent developing weekly status, scheduling meetings, etc-->
+</td>
+<td style="vertical-align: top;"><br> <!--Chng Ctrl: Number of  hours spent implementing and documenting changes to the baselined artifacts-->
+</td>
+<td style="vertical-align: top;">100<br> <!--%-->
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Backend/Database -> login and registration<br> <!--Task-->
+</td>
+<td style="vertical-align: top;">Connor Stacey<br> <!--Name-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Pla: Number of hours spent developing, documenting, and reviewing plans for the project-->
+</td>
+<td style="vertical-align: top;"><br> <!--Req Dev: Number of hours spent developing, documenting, and reviewing the customer needs-->
+</td>
+<td style="vertical-align: top;">2<br> <!--Design: Number of hours spent developing, documenting, and reviewing  system and component design-->
+</td>
+<td style="vertical-align: top;">8<br> <!--Impl: Number of hours spent actually coding, peer reviews, and/or unit testing-->
+</td>
+<td style="vertical-align: top;">3<br> <!--Test: Number of hours spent planning and executing the test-->
+</td>
+<td style="vertical-align: top;"><br> <!--Deliv: Number of hours spent packaging the product and/or developing the user manual-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Mgmt: Number of hours spent developing weekly status, scheduling meetings, etc-->
+</td>
+<td style="vertical-align: top;">2<br> <!--Chng Ctrl: Number of  hours spent implementing and documenting changes to the baselined artifacts-->
+</td>
+<td style="vertical-align: top;">100<br> <!--%-->
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Backend/Database<br> <!--Task-->
+</td>
+<td style="vertical-align: top;">Adam Martinez<br> <!--Name-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Plan: Number of hours spent developing, documenting, and reviewing plans for the project-->
+</td>
+<td style="vertical-align: top;">3<br> <!--Req Dev: Number of hours spent developing, documenting, and reviewing the customer needs-->
+</td>
+<td style="vertical-align: top;"><br> <!--Design: Number of hours spent developing, documenting, and reviewing  system and component design-->
+</td>
+<td style="vertical-align: top;">5<br> <!--Impl: Number of hours spent actually coding, peer reviews, and/or unit testing-->
+</td>
+<td style="vertical-align: top;"><br> <!--Test: Number of hours spent planning and executing the test-->
+</td>
+<td style="vertical-align: top;"><br> <!--Deliv: Number of hours spent packaging the product and/or developing the user manual-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Mgmt: Number of hours spent developing weekly status, scheduling meetings, etc-->
+</td>
+<td style="vertical-align: top;">2<br> <!--Chng Ctrl: Number of  hours spent implementing and documenting changes to the baselined artifacts-->
+</td>
+<td style="vertical-align: top;">90<br> <!--%-->
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Integration<br> <!--Task-->
+</td>
+<td style="vertical-align: top;">Nona Anderson<br> <!--Name-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Plan: Number of hours spent developing, documenting, and reviewing plans for the project-->
+</td>
+<td style="vertical-align: top;"><br> <!--Req Dev: Number of hours spent developing, documenting, and reviewing the customer needs-->
+</td>
+<td style="vertical-align: top;"><br> <!--Design: Number of hours spent developing, documenting, and reviewing  system and component design-->
+</td>
+<td style="vertical-align: top;">1.5<br> <!--Impl: Number of hours spent actually coding, peer reviews, and/or unit testing-->
+</td>
+<td style="vertical-align: top;"><br> <!--Test: Number of hours spent planning and executing the test-->
+</td>
+<td style="vertical-align: top;"><br> <!--Deliv: Number of hours spent packaging the product and/or developing the user manual-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Mgmt: Number of hours spent developing weekly status, scheduling meetings, etc-->
+</td>
+<td style="vertical-align: top;"><br> <!--Chng Ctrl: Number of  hours spent implementing and documenting changes to the baselined artifacts-->
+</td>
+<td style="vertical-align: top;">90<br> <!--%-->
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Integration<br> <!--Task-->
+</td>
+<td style="vertical-align: top;">Tanner Hay<br> <!--Name-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Plan: Number of hours spent developing, documenting, and reviewing plans for the project-->
+</td>
+<td style="vertical-align: top;"><br> <!--Req Dev: Number of hours spent developing, documenting, and reviewing the customer needs-->
+</td>
+<td style="vertical-align: top;"><br> <!--Design: Number of hours spent developing, documenting, and reviewing  system and component design-->
+</td>
+<td style="vertical-align: top;">1.5<br> <!--Impl: Number of hours spent actually coding, peer reviews, and/or unit testing-->
+</td>
+<td style="vertical-align: top;"><br> <!--Test: Number of hours spent planning and executing the test-->
+</td>
+<td style="vertical-align: top;"><br> <!--Deliv: Number of hours spent packaging the product and/or developing the user manual-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Mgmt: Number of hours spent developing weekly status, scheduling meetings, etc-->
+</td>
+<td style="vertical-align: top;"><br> <!--Chng Ctrl: Number of  hours spent implementing and documenting changes to the baselined artifacts-->
+</td>
+<td style="vertical-align: top;">90<br> <!--%-->
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Integration<br> <!--Task-->
+</td>
+<td style="vertical-align: top;">Adam Martinez<br> <!--Name-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Plan: Number of hours spent developing, documenting, and reviewing plans for the project-->
+</td>
+<td style="vertical-align: top;"><br> <!--Req Dev: Number of hours spent developing, documenting, and reviewing the customer needs-->
+</td>
+<td style="vertical-align: top;"><br> <!--Design: Number of hours spent developing, documenting, and reviewing  system and component design-->
+</td>
+<td style="vertical-align: top;">3<br> <!--Impl: Number of hours spent actually coding, peer reviews, and/or unit testing-->
+</td>
+<td style="vertical-align: top;"><br> <!--Test: Number of hours spent planning and executing the test-->
+</td>
+<td style="vertical-align: top;"><br> <!--Deliv: Number of hours spent packaging the product and/or developing the user manual-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Mgmt: Number of hours spent developing weekly status, scheduling meetings, etc-->
+</td>
+<td style="vertical-align: top;"><br> <!--Chng Ctrl: Number of  hours spent implementing and documenting changes to the baselined artifacts-->
+</td>
+<td style="vertical-align: top;">90<br> <!--%-->
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Design Document<br> <!--Task-->
+</td>
+<td style="vertical-align: top;">Adam Martinez<br> <!--Name-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Plan: Number of hours spent developing, documenting, and reviewing plans for the project-->
+</td>
+<td style="vertical-align: top;"><br> <!--Req Dev: Number of hours spent developing, documenting, and reviewing the customer needs-->
+</td>
+<td style="vertical-align: top;"><br> <!--Design: Number of hours spent developing, documenting, and reviewing  system and component design-->
+</td>
+<td style="vertical-align: top;"><br> <!--Impl: Number of hours spent actually coding, peer reviews, and/or unit testing-->
+</td>
+<td style="vertical-align: top;"><br> <!--Test: Number of hours spent planning and executing the test-->
+</td>
+<td style="vertical-align: top;">1<br> <!--Deliv: Number of hours spent packaging the product and/or developing the user manual-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Mgmt: Number of hours spent developing weekly status, scheduling meetings, etc-->
+</td>
+<td style="vertical-align: top;"><br> <!--Chng Ctrl: Number of  hours spent implementing and documenting changes to the baselined artifacts-->
+</td>
+<td style="vertical-align: top;">100<br> <!--%-->
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Class Diagram<br> <!--Task-->
+</td>
+<td style="vertical-align: top;">Tanner Hay<br> <!--Name-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Plan: Number of hours spent developing, documenting, and reviewing plans for the project-->
+</td>
+<td style="vertical-align: top;"><br> <!--Req Dev: Number of hours spent developing, documenting, and reviewing the customer needs-->
+</td>
+<td style="vertical-align: top;"><br> <!--Design: Number of hours spent developing, documenting, and reviewing  system and component design-->
+</td>
+<td style="vertical-align: top;"><br> <!--Impl: Number of hours spent actually coding, peer reviews, and/or unit testing-->
+</td>
+<td style="vertical-align: top;"><br> <!--Test: Number of hours spent planning and executing the test-->
+</td>
+<td style="vertical-align: top;">2<br> <!--Deliv: Number of hours spent packaging the product and/or developing the user manual-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Mgmt: Number of hours spent developing weekly status, scheduling meetings, etc-->
+</td>
+<td style="vertical-align: top;"><br> <!--Chng Ctrl: Number of  hours spent implementing and documenting changes to the baselined artifacts-->
+</td>
+<td style="vertical-align: top;">100<br> <!--%-->
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Status Update<br> <!--Task-->
+</td>
+<td style="vertical-align: top;">Nona Anderson<br> <!--Name-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Plan: Number of hours spent developing, documenting, and reviewing plans for the project-->
+</td>
+<td style="vertical-align: top;"><br> <!--Req Dev: Number of hours spent developing, documenting, and reviewing the customer needs-->
+</td>
+<td style="vertical-align: top;"><br> <!--Design: Number of hours spent developing, documenting, and reviewing  system and component design-->
+</td>
+<td style="vertical-align: top;"><br> <!--Impl: Number of hours spent actually coding, peer reviews, and/or unit testing-->
+</td>
+<td style="vertical-align: top;"><br> <!--Test: Number of hours spent planning and executing the test-->
+</td>
+<td style="vertical-align: top;"><br> <!--Deliv: Number of hours spent packaging the product and/or developing the user manual-->
+</td>
+<td style="vertical-align: top;"><br> <!--Proj Mgmt: Number of hours spent developing weekly status, scheduling meetings, etc-->
+</td>
+<td style="vertical-align: top;">.5<br> <!--Chng Ctrl: Number of  hours spent implementing and documenting changes to the baselined artifacts-->
+</td>
+<td style="vertical-align: top;">100<br> <!--%-->
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+<big><big><br>
+</big></big>
+<hr style="width: 100%; height: 2px;">
+<div style="text-align: center;"><span style="font-weight: bold;">Page
+Author/Creator:</span> <a
+ href="http://homes.soic.indiana.edu/aabhutta/">Adeel Bhutta</a><span
+ style="font-weight: bold;"><br>
+Last Modified By:</span> Nona Anderson<br> <span style="font-weight: bold;">
+Last Modified:</span> 2/28/2021
+</div>
+</body>
+</html>
