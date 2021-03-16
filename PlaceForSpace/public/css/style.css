@@ -299,3 +299,10 @@ form label{
 .google-button:hover {
     color: #8ddca4;
 }
+
+/* MAPS*/
+#map {
+    height: 500px;
+    width: 500px; 
+}
+  

@@ -72,7 +72,7 @@ router.get('/housing', (req, res) => {
                    noMatch = "No listings match that query, please try again.";
                }
                res.render("housing",{Listing:allListings, noMatch: noMatch});
-               console.log(allListings)
+               //console.log(allListings)
               }
             });
     } else {
@@ -82,7 +82,7 @@ router.get('/housing', (req, res) => {
             if(err){
                 console.log(err);
             } else {
-               console.log(allListings)
+               //console.log(allListings)
                res.render("housing",{Listing:allListings, noMatch: noMatch});
                
             }
@@ -99,7 +99,7 @@ router.get("/housing/:id", function(req, res){
       if(err){
           console.log(err);
       } else {
-          console.log(foundListing)
+          //console.log(foundListing)
           //render show template with that campground
           res.render("house", {listing: foundListing, layout: 'house'});
       }
@@ -227,5 +227,6 @@ router.post('/add-listing', (req, res) => {
 function escapeRegex(text) {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };
+
 
 module.exports = router;
