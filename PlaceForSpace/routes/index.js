@@ -13,15 +13,10 @@ const { query } = require('express')
 
 // @desc    Dashboard
 // @route   GET /dashboard
-router.get('/', ensureAuth ,async (req, res) => {
-  try {
-    res.render('dashboard', {
-      firstName: req.user.firstName,
-    })
-  }
-  catch (e) {
-    console.log(e)
-  }
+router.get('/', async (req, res) => {
+  res.render('about-page', {
+    layout: 'about-page',
+  })
 })
 
 // Registration Page

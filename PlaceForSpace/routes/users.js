@@ -106,18 +106,26 @@ router.post('/registration', (req, res) => {
 });
 
 // Login
-router.post('/login', function(req, res, next) {
-  passport.authenticate('local', {scope: ['profile']}, function(err, user, info) {
-    if (err) { return next(err); }
-    if (!user) { return res.redirect('/login'); }
-    req.logIn(user, function(err) {
-      if (err) { return next(err); }
-      var redirectTo = req.session.redirectTo ? req.session.redirectTo : '/dashboard';
-      delete req.session.redirectTo;
-      res.redirect(redirectTo);
-    });
+/*
+router.post('/login', (req, res, next) => {
+  passport.authenticate('local', {
+    successRedirect: '/dashboard',
+    failureRedirect: '/login',
+    failureFlash: true
   })(req, res, next);
 });
+*/
+
+router.post('/login', (req, res, next) => {
+  passport.authenticate('local', function (err, user) {
+    
+    req.logIn(user, function (err) { // <-- Log user in
+      console.log(req.user.firstName) 
+      return res.redirect('dashboard'); 
+    });
+  })(req, res);
+});
+
 
 /*
 https://github.com/jaredhanson/passport/issues/482

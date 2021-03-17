@@ -15,6 +15,7 @@ const crypto = require('crypto')  //avoid duplicate file names
 const multer = require('multer')
 const GridFsStorage = require('multer-gridfs-storage')
 const Grid = require('gridfs-stream')
+const { Cookie } = require('express-session')
 
 
 
@@ -61,7 +62,10 @@ app.use(
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({ mongoUrl: process.env.MONGO_URI })
+    store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
+    cookie:{
+      secure: false
+    }
   })
 )
 

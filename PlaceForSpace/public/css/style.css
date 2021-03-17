@@ -305,4 +305,7 @@ form label{
     height: 500px;
     width: 500px; 
 }
-  
+
+.map{
+    border-radius: 50px 
+}
