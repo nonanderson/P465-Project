@@ -53,7 +53,8 @@ router.get('/about-selling', (req, res) => {
 })
 
 // Housing Page
-router.get('/housing', (req, res) => {
+var scripts = [{ script: '../public/scripts/voice.js' }];
+router.get('/housing', (req, res, {scripts: scripts}) => {
   var noMatch = null;
     if(req.query.search) {
         const regex = new RegExp(escapeRegex(req.query.search), 'gi');
@@ -82,7 +83,6 @@ router.get('/housing', (req, res) => {
             if(err){
                 console.log(err);
             } else {
-               console.log(allListings)
                res.render("housing",{Listing:allListings, noMatch: noMatch});
                
             }
@@ -174,16 +174,19 @@ router.get('/add-listing', (req, res) => {
 // Submit listing
 router.post('/add-listing', (req, res) => {
 
-  const { email, name, streetAddress, city, state, zip, pictures } = req.body
+  const { email, name, streetAddress, city, state, zip, price, pictures } = req.body
   let errors = []
 
   //Check required fields
-  if (!email || !name || !streetAddress || !city || !state || !zip) {
+  if (!email || !name || !streetAddress || !city || !state || !zip || !price) {
     errors.push({ msg: 'Please fill all fields' })
   }
 
+  // if (typeof(price) !== "bigint") {
+  //   errors.push({ msg: "Price must be a whole number"})
+  // }
+
   if (!(/^\d+$/.test(zip)) || zip.length !== 5) {
-    console.log(zip)
     errors.push({ msg: 'Please enter a valid zip code'})
   }
 
@@ -196,7 +199,8 @@ router.post('/add-listing', (req, res) => {
       streetAddress,
       city,
       state,
-      zip
+      zip,
+      price
     })
   } else {
     const newListing = new Listing({
@@ -206,6 +210,7 @@ router.post('/add-listing', (req, res) => {
       city,
       state,
       zip,
+      price,
       pictures
     });
 
