@@ -9,6 +9,7 @@ const methodOverride = require('method-override')
 const { ensureAuth } = require('../middleware/auth')
 const Listing = require('../models/Listing')
 const { query } = require('express')
+const fs = require('fs')
 
 
 // @desc    Dashboard
@@ -89,6 +90,33 @@ router.get('/housing', (req, res, {scripts: scripts}) => {
          }
         );
     }
+
+    // //get images
+    // const gridConn = require('../app')
+    // const gfs = gridConn.gfs
+    // try {
+    //   gfs.files.find().toArray((err, files) => {
+    //     // Check if files
+    //     if (!files || files.length === 0) {
+    //       res.render('file-upload', { files: false })
+    //     }
+    //     else {
+    //       files.map(file => {
+    //         if (file.contentType === 'image/jpeg' || file.contentType === 'image/png') {
+    //           file.isImage = true;
+    //         }
+    //         else {
+    //           file.isImage = false;
+    //         }
+    //       })
+    //       res.render('file-upload', { files: files })
+    //     }
+  
+    //   })
+    // }
+    // catch (e) {
+    //   console.log(e)
+    // }
 })
 
 
@@ -101,7 +129,9 @@ router.get("/housing/:id", function(req, res){
       } else {
           console.log(foundListing)
           //render show template with that campground
-          res.render("house", {listing: foundListing, layout: 'house'});
+          var lat = 33
+          var lon = 32
+          res.render("house", {listing: foundListing, layout: 'house', latitude: lat, longitude: lon});
       }
   });
 });
@@ -174,14 +204,15 @@ router.get('/add-listing', (req, res) => {
 // Submit listing
 router.post('/add-listing', (req, res) => {
 
-  const { email, name, streetAddress, city, state, zip, price, pictures } = req.body
+  const { email, name, streetAddress, city, state, zip, image } = req.body
   let errors = []
 
   //Check required fields
-  if (!email || !name || !streetAddress || !city || !state || !zip || !price) {
+  if (!email || !name || !streetAddress || !city || !state || !zip) {
     errors.push({ msg: 'Please fill all fields' })
   }
-
+  console.log(typeof(image))
+  console.log(fs.readFileSync(image))
   // if (typeof(price) !== "bigint") {
   //   errors.push({ msg: "Price must be a whole number"})
   // }
@@ -200,7 +231,7 @@ router.post('/add-listing', (req, res) => {
       city,
       state,
       zip,
-      price
+      image
     })
   } else {
     const newListing = new Listing({
@@ -210,9 +241,12 @@ router.post('/add-listing', (req, res) => {
       city,
       state,
       zip,
-      price,
-      pictures
-    });
+      image
+    })
+
+    
+    //newListing.image.data = fs.readFileSync(image)
+
 
     // Save listing
     newListing
@@ -226,6 +260,7 @@ router.post('/add-listing', (req, res) => {
       })
       .catch(err => console.log(err));
   }
+
 });
 
 

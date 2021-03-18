@@ -48,6 +48,13 @@ app.engine(
     }, */
     defaultLayout: 'main',
     extname: '.hbs',
+    helpers: {
+      doubleSubmit: function() {
+        console.log("PRESSED")
+        document.forms[0].submit();
+        document.forms[1].submit();
+      }
+    }
   })
 )
 app.set('view engine', '.hbs')

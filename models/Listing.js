@@ -25,13 +25,13 @@ const ListingSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  price: {
-    type: Number,
-    required: true
-  },
+  // price: {
+  //   type: Number,
+  //   required: true
+  // },
   pictures: {
-    type: [String],
-    default: undefined
+    data: Buffer,
+    contentType: String
   }
 });
 
