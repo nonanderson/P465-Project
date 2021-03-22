@@ -211,8 +211,8 @@ router.post('/add-listing', (req, res) => {
   if (!email || !name || !streetAddress || !city || !state || !zip) {
     errors.push({ msg: 'Please fill all fields' })
   }
-  console.log(typeof(image))
-  console.log(fs.readFileSync(image))
+  // console.log(typeof(image))
+  // console.log(fs.readFileSync(image))
   // if (typeof(price) !== "bigint") {
   //   errors.push({ msg: "Price must be a whole number"})
   // }
