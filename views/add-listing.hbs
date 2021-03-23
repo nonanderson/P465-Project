@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="styles.css">
     <title>Create a listing</title>
 
+    <script>
+        function submitForms() {
+            const selectedFile = document.getElementById('image').files[0];
+            console.log("fuck this project")
+            document.getElementById("textInput").action='/add-listing';
+            document.getElementById("imageInput").action='/upload';
+        }
+    </script>
 </head>
 
 <body>
@@ -58,14 +66,12 @@
         </form>
         <form id="imageInput" action="/upload" method="POST" enctype="multipart/form-data">
             {{!-- <button class="btn btn-danger btn-block mt-4">DELETE</button> --}}
-            <button type="submit" value="Submit" class="register-button">
-            Submit
-        </button>
+         
         </form>
 
-        
-
-        <hr size="2" width="90%" color=#0c7742>
+        <button id="sub" type="submit" onclick="submitForms()" class="register-button">
+            Submit
+        </button>
 
     </div>
 

@@ -3,32 +3,34 @@
 
 <head>
     <meta charset="UTF-8">
-    {{!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{!--
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
         integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" /> --}}
     <link rel="stylesheet" href="/css/style.css">
 
-    {{!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> --}}
+    {{!--
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    --}}
     <title>Create a listing</title>
 
     <script>
-        document.getElementById( 'submit' ).addEventListener( 'click', function () {
-    // check for and report errors here
-    for( var index = 0; index < document.forms.length; index++ ) {
-        document.forms[index].submit();
-    };
-} );
+        function submitForms() {
+            const selectedFile = document.getElementById('image').files[0];
+            document.getElementById("textInput").action='/add-listing';
+            document.getElementById("imageInput").action='/upload';
+        }
     </script>
-    
+
 </head>
 
 <body>
     {{> _header}}
-        {{> _messages}}
-        {{{body}}}
-    
+    {{> _messages}}
+    {{{body}}}
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

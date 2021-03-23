@@ -10,7 +10,7 @@ const { ensureAuth } = require('../middleware/auth')
 const Listing = require('../models/Listing')
 const { query } = require('express')
 const fs = require('fs')
-
+const NodeGeocoder = require('node-geocoder')
 
 // @desc    Dashboard
 // @route   GET /dashboard
@@ -74,7 +74,7 @@ router.get('/housing', (req, res, {scripts: scripts}) => {
                    noMatch = "No listings match that query, please try again.";
                }
                res.render("housing",{Listing:allListings, noMatch: noMatch});
-               console.log(allListings)
+               //console.log(allListings)
               }
             });
     } else {
@@ -120,21 +120,34 @@ router.get('/housing', (req, res, {scripts: scripts}) => {
 })
 
 
-router.get("/housing/:id", function(req, res){
+router.get("/housing/:id", async function(req, res){
   //find the campground with provided ID
   console.log(req.params.id)
-  Listing.findById(req.params.id).lean().populate("comments").exec(function(err, foundListing){
+  Listing.findById(req.params.id).lean().populate("comments").exec(async function(err, foundListing){
       if(err){
           console.log(err);
       } else {
-          console.log(foundListing)
-          //render show template with that campground
-          var lat = 33
-          var lon = 32
-          res.render("house", {listing: foundListing, layout: 'house', latitude: lat, longitude: lon});
+        const options = {
+          provider: 'google',
+         
+          // Optional depending on the providers
+
+          apiKey: 'AIzaSyBUo99cCKpUBKbERNPyP399gYX3GLe05Rs', // for Mapquest, OpenCage, Google Premier
+          formatter: null // 'gpx', 'string', ...
+        }
+      
+        const geocoder = NodeGeocoder(options)
+        
+        var address = foundListing.streetAddress + " " + foundListing.city + " " + foundListing.state
+
+        const locationInfo = await geocoder.geocode(address);
+
+        var lat = locationInfo[0].latitude
+        var lon = locationInfo[0].longitude
+        res.render("house", {listing: foundListing, layout: 'house', latitude: lat, longitude: lon});
       }
-  });
-});
+  })
+})
 
 
 
@@ -213,9 +226,7 @@ router.post('/add-listing', (req, res) => {
   }
   // console.log(typeof(image))
   // console.log(fs.readFileSync(image))
-  // if (typeof(price) !== "bigint") {
-  //   errors.push({ msg: "Price must be a whole number"})
-  // }
+
 
   if (!(/^\d+$/.test(zip)) || zip.length !== 5) {
     errors.push({ msg: 'Please enter a valid zip code'})

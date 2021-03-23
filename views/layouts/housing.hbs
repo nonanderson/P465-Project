@@ -1,15 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {{!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../../public/scripts/voice.js"></script> --}}
 
     <link rel="stylesheet" href="/css/style.css">
     <title>Housing</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var speechRecognition = window.webkitSpeechRecognition
+
+        var recognition = new speechRecognition()
+
+        var searchbar = $("#searchbar")
+
+        var instructions = $("#instructions")
+
+        var content = ''
+
+        recognition.continuous = true
+
+        recognition.onstart = function () {
+            instructions.text("Voice recognition is on")
+        }
+
+        $("#start-btn").click(function (event) {
+            if (content.length) {
+                content += ''
+            }
+
+            recognition.start()
+        })
+    </script>
+
 </head>
+
 <body>
     {{> _header}}
     <div class="about-body">
@@ -17,10 +47,12 @@
     </div>
 
 </body>
-{{!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"><{{!}}/script>
- <script src="voice.js"><{{!}}/script>
- {{!-- <script src="../public/scripts/voice.js"></script> --}}
- {{#each scripts}}
-  <script src="{{script}}"></script>
+{{!--
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">< {{ !}}/script>
+            < script src = "voice.js" >< {{ !}}/script>
+    { { !-- < script src = "../public/scripts/voice.js" ></script> --}}
+{{#each scripts}}
+<script src="{{script}}"></script>
 {{/each}} --}}
+
 </html>
