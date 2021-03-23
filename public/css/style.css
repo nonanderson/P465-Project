@@ -219,11 +219,9 @@ form label{
 
 .housingList{
     list-style-type: none;
-    margin: 0;
     overflow: hidden;
     align-self: center;
     display: inline-block;
-
 }
 
 .housingList li {
@@ -303,6 +301,23 @@ form label{
 
 #map { 
     height: 500px;
-    width: 500px;
-    justify-self: left;
+    width: 85pc;
+    
+    margin: 0 auto;
+    margin-bottom: 50px;
 } 
+
+hr{
+    border: 1px solid #fffaeb;
+    background-color: #fffaeb;
+}
+/* House page*/
+
+.house-view{
+   
+    justify-content: center;
+}
+
+.amenities-list{
+    
+}

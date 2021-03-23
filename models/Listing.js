@@ -9,6 +9,10 @@ const ListingSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  description:{
+    type: String,
+    required: true
+  },
   streetAddress: {
     type: String,
     required: true
@@ -32,6 +36,11 @@ const ListingSchema = new mongoose.Schema({
   pictures: {
     data: Buffer,
     contentType: String
+  },
+
+  amenities: {
+    type: [String],
+    required: true
   }
 });
 

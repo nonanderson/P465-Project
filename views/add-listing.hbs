@@ -11,7 +11,6 @@
     <script>
         function submitForms() {
             const selectedFile = document.getElementById('image').files[0];
-            console.log("fuck this project")
             document.getElementById("textInput").action='/add-listing';
             document.getElementById("imageInput").action='/upload';
         }
@@ -27,35 +26,42 @@
 
                 <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" {{#if email}}
                     value={{email}} {{/if}} />
-                <label for="email">email</label>
+                
             </div>
             <div class="form-group">
 
                 <input type="name" id="name" name="name" class="form-control" placeholder="Enter name of listing" {{#if
                     name}} value={{name}} {{/if}} />
-                <label for="name">name</label>
+                
             </div>
+
+            <div class="form-group">
+
+                <input type="description" id="description" name="description" class="form-control" placeholder="Enter a description of listing"/>
+            </div>
+
+
             <div class="form-group">
 
                 <input type="streetAddress" id="streetAddress" name="streetAddress" class="form-control"
                     placeholder="Enter Street Address" {{#if streetAddress}} value={{streetAddress}} {{/if}} />
-                <label for="streetAddress">Street Address</label>
+                
             </div>
             <div class="form-group">
 
                 <input type="city" id="city" name="city" class="form-control" placeholder="Enter city" {{#if city}}
                     value={{city}} {{/if}} />
-                <label for="city">City</label>
+    
             </div>
             <div class="form-group">
 
                 <input type="state" id="state" name="state" class="form-control" placeholder="Enter state" />
-                <label for="state">State</label>
+               
             </div>
             <div class="form-group">
 
                 <input type="zip" id="zip" name="zip" class="form-control" placeholder="Enter zip code" />
-                <label for="zip">Zip Code</label>
+                
             </div>
 
             <div class="form-group">
@@ -63,12 +69,27 @@
                 <input type="file" name="image" id="image" class="custom-file-input">
                 <label for="image" class="custom-file-label">Choose file</label>
             </div>
+
+            <div class="form-group">
+                <input type="checkbox" name="amenities" value="Grill"/> Grill<br/>
+                <input type="checkbox" name="amenities" value="Dryer"/> Dryer<br/>
+                <input type="checkbox" name="amenities" value="Washer"/> Washer<br/>
+                <input type="checkbox" name="amenities" value="Internet"/> Internet<br/>
+                <input type="checkbox" name="amenities" value="Pool"/> Pool<br/>
+                <input type="checkbox" name="amenities" value="TV"/> TV<br/>
+                <input type="checkbox" name="amenities" value="Cable"/> Cable<br/>
+                <input type="checkbox" name="amenities" value="Board Games"/> Board Games<br/>
+                
+                
+            </div>
+            
+            <button type="submit" value="Submit"></button>
         </form>
+
         <form id="imageInput" action="/upload" method="POST" enctype="multipart/form-data">
             {{!-- <button class="btn btn-danger btn-block mt-4">DELETE</button> --}}
          
         </form>
-
         <button id="sub" type="submit" onclick="submitForms()" class="register-button">
             Submit
         </button>

@@ -208,20 +208,22 @@ router.get('/file-upload', (req, res) => {
 
 
 // Create Listing Page
-router.get('/add-listing', (req, res) => {
+router.get('/add-listing', /*ensureAuth,*/ (req, res) => {
   res.render('add-listing', {
     layout: 'add-listing',
   })
 })
 
 // Submit listing
-router.post('/add-listing', (req, res) => {
-
-  const { email, name, streetAddress, city, state, zip, image } = req.body
+router.post('/add-listing',(req, res) => {
+  console.log(req.body)
+  console.log(req.body.amenities)
+  const { email, name, description, streetAddress, city, state, zip, image, amenities} = req.body
   let errors = []
-
+  console.log(amenities)
   //Check required fields
-  if (!email || !name || !streetAddress || !city || !state || !zip) {
+  //req.user.firstname or req.user.username
+  if (!email || !name || !streetAddress || !city || !state || !zip || !amenities || !description) {
     errors.push({ msg: 'Please fill all fields' })
   }
   // console.log(typeof(image))
@@ -238,23 +240,26 @@ router.post('/add-listing', (req, res) => {
       errors,
       email,
       name,
+      description,
       streetAddress,
       city,
       state,
       zip,
-      image
+      image,
+      amenities
     })
   } else {
     const newListing = new Listing({
       email,
       name,
+      description,
       streetAddress,
       city,
       state,
       zip,
-      image
+      image,
+      amenities
     })
-
     
     //newListing.image.data = fs.readFileSync(image)
 

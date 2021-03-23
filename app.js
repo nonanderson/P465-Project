@@ -53,7 +53,11 @@ app.engine(
         console.log("PRESSED")
         document.forms[0].submit();
         document.forms[1].submit();
+      },
+      isdefined: function (value) {
+        return value !== undefined;
       }
+
     }
   })
 )
