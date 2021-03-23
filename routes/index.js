@@ -122,9 +122,7 @@ router.get('/housing', (req, res, {scripts: scripts}) => {
 
 router.get("/housing/:id", async function(req, res){
   //find the campground with provided ID
-  console.log(req.params.id)
   const api_key = process.env.GOOGLE_MAP_KEY
-  console.log("API KEY = " + api_key)
   Listing.findById(req.params.id).lean().populate("comments").exec(async function(err, foundListing){
       if(err){
           console.log(err);

@@ -61,6 +61,7 @@ body{
     color: inherit;
 }
 
+
 .register-container {
     border: 2px solid #fffaeb;
     background-color: #fffaeb;
@@ -219,14 +220,15 @@ form label{
 .housingList{
     list-style-type: none;
     margin: 0;
-    padding: 0;
     overflow: hidden;
+    align-self: center;
+    display: inline-block;
 
 }
 
 .housingList li {
     float: left;
-    margin: 10px
+    margin: 10px;
 }
 
 
@@ -302,4 +304,5 @@ form label{
 #map { 
     height: 500px;
     width: 500px;
+    justify-self: left;
 } 
