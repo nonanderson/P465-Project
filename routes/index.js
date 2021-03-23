@@ -123,6 +123,8 @@ router.get('/housing', (req, res, {scripts: scripts}) => {
 router.get("/housing/:id", async function(req, res){
   //find the campground with provided ID
   console.log(req.params.id)
+  const api_key = process.env.GOOGLE_MAP_KEY
+  console.log("API KEY = " + api_key)
   Listing.findById(req.params.id).lean().populate("comments").exec(async function(err, foundListing){
       if(err){
           console.log(err);
@@ -132,12 +134,12 @@ router.get("/housing/:id", async function(req, res){
          
           // Optional depending on the providers
 
-          apiKey: 'AIzaSyBUo99cCKpUBKbERNPyP399gYX3GLe05Rs', // for Mapquest, OpenCage, Google Premier
+          apiKey: api_key, // for Mapquest, OpenCage, Google Premier
           formatter: null // 'gpx', 'string', ...
         }
       
         const geocoder = NodeGeocoder(options)
-        
+
         var address = foundListing.streetAddress + " " + foundListing.city + " " + foundListing.state
 
         const locationInfo = await geocoder.geocode(address);
