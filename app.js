@@ -136,10 +136,10 @@ file: (req, file) => {
     })
 }
 })
-const upload = multer({ storage })
+const uploadP = multer({ storage })
 
 // Upload image to DB
-app.post('/upload', upload.single('file'), (req, res) => {
+app.post('/upload', uploadP.single('file'), (req, res) => {
   //res.json({file: req.file})
   res.redirect('/add-listing')
 })

@@ -20,7 +20,7 @@
 <body>
 
     <div class="register-container">
-        <form id="textInput" action=" /add-listing" method="POST">
+        <form id="textInput" action="/add-listing" method="POST" enctype="multipart/form-data">
             <h1>Create a listing</h1>
             <div class="form-group">
 
@@ -83,16 +83,10 @@
                 
             </div>
             
-            <button type="submit" value="Submit"></button>
+            <button type="submit" value="Submit"
+            class="register-button">SUBMIT</button>
         </form>
 
-        <form id="imageInput" action="/upload" method="POST" enctype="multipart/form-data">
-            {{!-- <button class="btn btn-danger btn-block mt-4">DELETE</button> --}}
-         
-        </form>
-        <button id="sub" type="submit" onclick="submitForms()" class="register-button">
-            Submit
-        </button>
 
     </div>
 

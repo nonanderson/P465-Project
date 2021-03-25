@@ -33,9 +33,9 @@ const ListingSchema = new mongoose.Schema({
   //   type: Number,
   //   required: true
   // },
-  pictures: {
-    data: Buffer,
-    contentType: String
+  image: {
+    type: String,
+    require: true
   },
 
   amenities: {

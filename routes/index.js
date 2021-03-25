@@ -12,6 +12,33 @@ const { query } = require('express')
 const fs = require('fs')
 const NodeGeocoder = require('node-geocoder')
 
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './views/images')
+  },
+  filename: function(req, file, cb) {
+    cb(null, Date.now() + file.originalname)
+  }
+})
+
+const fileFilter = (req, file, cb) => {
+  //reject file
+  if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+    console.log("ITS A PNG OR JPEG")
+    cb(null, true)
+  }
+  //accept file
+  else {
+    cb(null, false)
+  }
+}
+
+const upload = multer({storage: storage, limits: {
+  fileSize: 1024 * 1024 * 8
+},
+  fileFilter: fileFilter
+  })
+
 // @desc    Dashboard
 // @route   GET /dashboard
 router.get('/', ensureAuth ,async (req, res) => {
@@ -215,12 +242,12 @@ router.get('/add-listing', /*ensureAuth,*/ (req, res) => {
 })
 
 // Submit listing
-router.post('/add-listing',(req, res) => {
-  console.log(req.body)
-  console.log(req.body.amenities)
-  const { email, name, description, streetAddress, city, state, zip, image, amenities} = req.body
+router.post('/add-listing', upload.single('image'), (req, res) => {
+  
+  var { email, name, description, streetAddress, city, state, zip, image, amenities} = req.body
+  image = req.file.filename
+
   let errors = []
-  console.log(amenities)
   //Check required fields
   //req.user.firstname or req.user.username
   if (!email || !name || !streetAddress || !city || !state || !zip || !amenities || !description) {

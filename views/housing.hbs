@@ -42,26 +42,28 @@ $("#start-btn").click(function(event) {
       <input type="text" id="searchbar" name="search" placeholder="Listing search..." class="form-control">
       <input type="submit" value="Search" class="btn btn-default">
       <button type="button" id="start-btn" onclick={{voice}}>Voice Search</button>
+    </div>
 
       <p id="instructions"></p>
         
         {{!--<h4>{{Listing[0].state}}</h4>--}}
-        {{! my own little handlebar comment how cute}}
     
+
+      <div class="wrapper">
         <ul class="housingList">
           <!-- Cant figue out how to get the values by themself #yeet-->
         {{#each Listing}}
         <li>
           <div class="housingCard">
-            <a href="/housing/{{this._id}}"><img src="house.jpg" style="width:100%"></a>
+            <a href="/housing/{{this._id}}"><img src="{{this.image}}" class="cardImage"></a>
             <h4>{{this.name}}</h4>
             
           </div>
         </li>
         {{/each}} 
         </ul>
-
     </div>
+    
 
   </form>
 
