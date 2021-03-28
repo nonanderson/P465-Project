@@ -19,58 +19,69 @@
 
 <body>
 
-    <div class="register-container">
-        <form id="textInput" action="/add-listing" method="POST" enctype="multipart/form-data">
+    <div class="listing-container">
+        <form id="textInput" action=" /add-listing" method="POST" enctype="multipart/form-data">
             <h1>Create a listing</h1>
             <div class="form-group">
 
-                <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" {{#if email}}
+                <input type="email" id="email" name="email" class="form-control" placeholder="Email" {{#if email}}
                     value={{email}} {{/if}} />
+                    <label for="email">Enter Your Email</label>
                 
             </div>
             <div class="form-group">
 
-                <input type="name" id="name" name="name" class="form-control" placeholder="Enter name of listing" {{#if
+                <input type="name" id="name" name="name" class="form-control" placeholder="Listing Name" {{#if
                     name}} value={{name}} {{/if}} />
+                    <label for="name">Enter Listing Name</label>
                 
             </div>
 
-            <div class="form-group">
-
-                <input type="description" id="description" name="description" class="form-control" placeholder="Enter a description of listing"/>
+            <div class="form-description-box">
+                <textarea type="description" id="description" name="description" placeholder="House Description" cols = "28" rows = "5" class="form-control"></textarea>
             </div>
 
 
             <div class="form-group">
 
                 <input type="streetAddress" id="streetAddress" name="streetAddress" class="form-control"
-                    placeholder="Enter Street Address" {{#if streetAddress}} value={{streetAddress}} {{/if}} />
+                    placeholder="Street Address" {{#if streetAddress}} value={{streetAddress}} {{/if}} />
+                    <label for="streetAddress">Enter Street Address</label>
                 
             </div>
             <div class="form-group">
 
-                <input type="city" id="city" name="city" class="form-control" placeholder="Enter city" {{#if city}}
+                <input type="city" id="city" name="city" class="form-control" placeholder="City" {{#if city}}
                     value={{city}} {{/if}} />
+                    <label for="city">Enter City</label>
     
             </div>
             <div class="form-group">
 
-                <input type="state" id="state" name="state" class="form-control" placeholder="Enter state" />
+                <input type="state" id="state" name="state" class="form-control" placeholder="State" />
+                <label for="state">Enter State</label>
                
             </div>
             <div class="form-group">
 
-                <input type="zip" id="zip" name="zip" class="form-control" placeholder="Enter zip code" />
+                <input type="zip" id="zip" name="zip" class="form-control" placeholder="Zip Code" />
+                <label for="zip">Enter Zip Code</label>
                 
             </div>
 
             <div class="form-group">
-
                 <input type="file" name="image" id="image" class="custom-file-input">
-                <label for="image" class="custom-file-label">Choose file</label>
+                <label for="image" class="custom-file-label"></label>
             </div>
 
-            <div class="form-group">
+            <form id="imageInput" action="/upload" method="POST" enctype="multipart/form-data">
+            <button type="submit" value="Submit"
+            class="upload-button">Upload Image</button>
+            {{!-- <button class="btn btn-danger btn-block mt-4">DELETE</button> --}}
+         
+            </form>
+
+            <div class="form-checklist">
                 <input type="checkbox" name="amenities" value="Grill"/> Grill<br/>
                 <input type="checkbox" name="amenities" value="Dryer"/> Dryer<br/>
                 <input type="checkbox" name="amenities" value="Washer"/> Washer<br/>
@@ -83,10 +94,13 @@
                 
             </div>
             
-            <button type="submit" value="Submit"
-            class="register-button">SUBMIT</button>
+            
+
         </form>
 
+        <button id="sub" type="submit" onclick="submitForms()" class="register-button">
+            Submit
+        </button>
 
     </div>
 
