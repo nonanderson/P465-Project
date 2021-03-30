@@ -74,10 +74,11 @@
                 <label for="image" class="custom-file-label"></label>
             </div>
 
-            <form id="imageInput" class="listing-input" action="/upload" method="POST" enctype="multipart/form-data">
-            <button type="submit" value="Submit"
-            class="upload-button">Upload Image</button>
+            
+            
             {{!-- <button class="btn btn-danger btn-block mt-4">DELETE</button> --}}
+
+            
          
             </form>
 
@@ -92,14 +93,19 @@
                 <input type="checkbox" name="amenities" value="Board Games"/> Board Games<br/>
                 
             </div>
-            
-            
+
+            <!--
+            <form id="imageInput" class="listing-input" action="/upload" method="POST" enctype="multipart/form-data">
+            <button type="submit" value="Submit"
+            class="upload-button">Upload Image</button>
+            -->
+
+            <button id="sub" type="submit" class="register-button">
+              Submit
+            </button>
 
         </form>
 
-        <button id="sub" type="submit" onclick="submitForms()" class="register-button">
-            Submit
-        </button>
 
     </div>
 

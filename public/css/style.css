@@ -201,6 +201,8 @@ textarea {
     margin-bottom: 20px;
 }
 
+
+
 .navbar{
     background-color: #fffaeb;
 }
@@ -251,7 +253,10 @@ textarea {
 .form-group {
     display: inline-block;
     margin: 10px;
-    row-gap: 10px;
+    align-items: center;
+}
+
+.form-group a {
     align-self: center;
 }
 
