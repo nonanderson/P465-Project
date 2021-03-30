@@ -304,6 +304,17 @@ textarea {
 
 }
 
+.listing-textbox {
+    align-self: center;
+    font-family: arial;
+    width: 85%;
+}
+
+.listing-input {
+    font-family: arial;
+    align-self: center;
+}
+
 /* HOVER EFFECTS */
 
 .register-button:hover p {

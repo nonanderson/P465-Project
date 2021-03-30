@@ -24,47 +24,47 @@
             <h1>Create a listing</h1>
             <div class="form-group">
 
-                <input type="email" id="email" name="email" class="form-control" placeholder="Email" {{#if email}}
+                <input type="email" class="listing-input" id="email" name="email" class="form-control" placeholder="Email" {{#if email}}
                     value={{email}} {{/if}} />
                     <label for="email">Enter Your Email</label>
                 
             </div>
             <div class="form-group">
 
-                <input type="name" id="name" name="name" class="form-control" placeholder="Listing Name" {{#if
+                <input type="name" class="listing-input" id="name" name="name" class="form-control" placeholder="Listing Name" {{#if
                     name}} value={{name}} {{/if}} />
                     <label for="name">Enter Listing Name</label>
                 
             </div>
 
             <div class="form-description-box">
-                <textarea type="description" id="description" name="description" placeholder="House Description" cols = "28" rows = "5" class="form-control"></textarea>
+                <textarea type="description" class="listing-textbox" id="description" name="description" placeholder="House Description" cols = "30" rows = "5" class="form-control"></textarea>
             </div>
 
 
             <div class="form-group">
 
-                <input type="streetAddress" id="streetAddress" name="streetAddress" class="form-control"
+                <input type="streetAddress" class="listing-input" id="streetAddress" name="streetAddress" class="form-control"
                     placeholder="Street Address" {{#if streetAddress}} value={{streetAddress}} {{/if}} />
                     <label for="streetAddress">Enter Street Address</label>
                 
             </div>
             <div class="form-group">
 
-                <input type="city" id="city" name="city" class="form-control" placeholder="City" {{#if city}}
+                <input type="city" class="listing-input" id="city" name="city" class="form-control" placeholder="City" {{#if city}}
                     value={{city}} {{/if}} />
                     <label for="city">Enter City</label>
     
             </div>
             <div class="form-group">
 
-                <input type="state" id="state" name="state" class="form-control" placeholder="State" />
+                <input type="state" class="listing-input" id="state" name="state" class="form-control" placeholder="State" />
                 <label for="state">Enter State</label>
                
             </div>
             <div class="form-group">
 
-                <input type="zip" id="zip" name="zip" class="form-control" placeholder="Zip Code" />
+                <input type="zip" class="listing-input" id="zip" name="zip" class="form-control" placeholder="Zip Code" />
                 <label for="zip">Enter Zip Code</label>
                 
             </div>
@@ -74,7 +74,7 @@
                 <label for="image" class="custom-file-label"></label>
             </div>
 
-            <form id="imageInput" action="/upload" method="POST" enctype="multipart/form-data">
+            <form id="imageInput" class="listing-input" action="/upload" method="POST" enctype="multipart/form-data">
             <button type="submit" value="Submit"
             class="upload-button">Upload Image</button>
             {{!-- <button class="btn btn-danger btn-block mt-4">DELETE</button> --}}
@@ -90,7 +90,6 @@
                 <input type="checkbox" name="amenities" value="TV"/> TV<br/>
                 <input type="checkbox" name="amenities" value="Cable"/> Cable<br/>
                 <input type="checkbox" name="amenities" value="Board Games"/> Board Games<br/>
-                
                 
             </div>
             
