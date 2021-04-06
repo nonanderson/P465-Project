@@ -14,23 +14,27 @@ var instructions = document.getElementById("instructions")
 
 var startbtn = document.getElementById("start-btn")
 
-var content = ''
 
-recognition.continuous = true
 
-recognition.onstart = function() {
-    instructions.text("Voice recognition is on")
+recognition.continuous = false
+
+
+
+recognition.onresult = function (event) {
+  
+  var current = event.resultIndex;
+
+  var transcript = event.results[current][0].transcript
+
+  document.getElementById("searchbar").value = transcript
+  
 }
 
-function speech() {
-  document.getElementById("m").style.color = "red"
 
-    if(content.length) {
-        content += ''
-    }
 
+function speech(event) {
     recognition.start()
-})
+}
 </script>
   <title>Housing</title>
 </head>
@@ -41,14 +45,14 @@ function speech() {
   <p>Long-term rentals</p>
   <p>Short term-rentals</p> --}}
 
-  <button type="button" id="start-btn" onclick="speech()">Voice Search</button>
-  <p id="m">MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM</p>
+
 
   <form action="/housing" method="GET" class="form-inline">
     <div class="form-group">
       <input type="text" id="searchbar" name="search" placeholder="Listing search..." class="form-control">
-      <input type="submit" value="Search" class="btn btn-default">
-
+      <input type="submit" value="&#128269" class="btn btn-default">
+      <button type="button" id="start-btn" onclick="speech()">&#127908</button>
+     
       
     </div>
 
