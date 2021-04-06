@@ -3,14 +3,16 @@
 
 <head>
   <link rel="stylesheet" href="styles.css">
-      <script>var speechRecognition = window.webkitSpeechRecognition
+<script>var speechRecognition = window.webkitSpeechRecognition
 
 
 var recognition = new speechRecognition()
 
-var searchbar = $("#searchbar")
+var searchbar = document.getElementById("searchbar")
 
-var instructions = $("#instructions")
+var instructions = document.getElementById("instructions")
+
+var startbtn = document.getElementById("start-btn")
 
 var content = ''
 
@@ -20,14 +22,16 @@ recognition.onstart = function() {
     instructions.text("Voice recognition is on")
 }
 
-$("#start-btn").click(function(event) {
-  console.log("in js file")
+function speech() {
+  document.getElementById("m").style.color = "red"
+
     if(content.length) {
         content += ''
     }
 
     recognition.start()
-})</script>
+})
+</script>
   <title>Housing</title>
 </head>
 
@@ -37,12 +41,15 @@ $("#start-btn").click(function(event) {
   <p>Long-term rentals</p>
   <p>Short term-rentals</p> --}}
 
+  <button type="button" id="start-btn" onclick="speech()">Voice Search</button>
+  <p id="m">MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM</p>
+
   <form action="/housing" method="GET" class="form-inline">
     <div class="form-group">
       <input type="text" id="searchbar" name="search" placeholder="Listing search..." class="form-control">
       <input type="submit" value="Search" class="btn btn-default">
 
-      <!--<button type="button" class="voice-btn" id="start-btn" onclick={{voice}}>Voice Search</button>-->
+      
     </div>
 
 
