@@ -185,3 +185,7 @@ app.listen(
     PORT,
     console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
 )
+
+// The checkout route
+const checkout = require('./routes/checkout');
+app.use('/checkout', checkout);

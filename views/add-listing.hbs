@@ -11,8 +11,8 @@
     <script>
         function submitForms() {
             const selectedFile = document.getElementById('image').files[0];
-            document.getElementById("textInput").action='/add-listing';
-            document.getElementById("imageInput").action='/upload';
+            document.getElementById("textInput").action = '/add-listing';
+            document.getElementById("imageInput").action = '/upload';
         }
     </script>
 </head>
@@ -20,53 +20,45 @@
 <body>
 
     <div class="listing-container">
-        <form id="textInput" action=" /add-listing" method="POST" enctype="multipart/form-data">
+        <form class="listing-form" id="textInput" action=" /add-listing" method="POST" enctype="multipart/form-data">
+
             <h1>Create a listing</h1>
-            <div class="form-group">
-
-                <input type="email" class="listing-input" id="email" name="email" class="form-control" placeholder="Email" {{#if email}}
-                    value={{email}} {{/if}} />
-                    <label for="email">Enter Your Email</label>
-                
-            </div>
-            <div class="form-group">
-
-                <input type="name" class="listing-input" id="name" name="name" class="form-control" placeholder="Listing Name" {{#if
-                    name}} value={{name}} {{/if}} />
-                    <label for="name">Enter Listing Name</label>
-                
-            </div>
-
-            <div class="form-description-box">
-                <textarea type="description" class="listing-textbox" id="description" name="description" placeholder="House Description" cols = "30" rows = "5" class="form-control"></textarea>
-            </div>
-
 
             <div class="form-group">
-
-                <input type="streetAddress" class="listing-input" id="streetAddress" name="streetAddress" class="form-control"
-                    placeholder="Street Address" {{#if streetAddress}} value={{streetAddress}} {{/if}} />
-                    <label for="streetAddress">Enter Street Address</label>
-                
+                <input type="email" class="listing-input" id="email" name="email" class="form-control"
+                    placeholder="Email" {{#if email}} value={{email}} {{/if}} />
+                <label for="email">Enter Your Email</label>
             </div>
-            <div class="form-group">
 
-                <input type="city" class="listing-input" id="city" name="city" class="form-control" placeholder="City" {{#if city}}
-                    value={{city}} {{/if}} />
-                    <label for="city">Enter City</label>
-    
+            <div class="form-group">
+                <input type="name" class="listing-input" id="name" name="name" class="form-control"
+                    placeholder="Listing Name" {{#if name}} value={{name}} {{/if}} />
+                <label for="name">Enter Listing Name</label>
             </div>
-            <div class="form-group">
 
-                <input type="state" class="listing-input" id="state" name="state" class="form-control" placeholder="State" />
+            <div class="form-group">
+                <input type="streetAddress" class="listing-input" id="streetAddress" name="streetAddress"
+                    class="form-control" placeholder="Street Address" {{#if streetAddress}} value={{streetAddress}}
+                    {{/if}} />
+                <label for="streetAddress">Enter Street Address</label>
+            </div>
+
+            <div class="form-group">
+                <input type="city" class="listing-input" id="city" name="city" class="form-control" placeholder="City"
+                    {{#if city}} value={{city}} {{/if}} />
+                <label for="city">Enter City</label>
+            </div>
+
+            <div class="form-group">
+                <input type="state" class="listing-input" id="state" name="state" class="form-control"
+                    placeholder="State" />
                 <label for="state">Enter State</label>
-               
             </div>
-            <div class="form-group">
 
-                <input type="zip" class="listing-input" id="zip" name="zip" class="form-control" placeholder="Zip Code" />
+            <div class="form-group">
+                <input type="zip" class="listing-input" id="zip" name="zip" class="form-control"
+                    placeholder="Zip Code" />
                 <label for="zip">Enter Zip Code</label>
-                
             </div>
 
             <div class="form-group">
@@ -74,34 +66,25 @@
                 <label for="image" class="custom-file-label"></label>
             </div>
 
-            
-            
-            {{!-- <button class="btn btn-danger btn-block mt-4">DELETE</button> --}}
-
-            
-         
-            
-
-            <div class="form-checklist">
-                <input type="checkbox" name="amenities" value="Grill"/> Grill<br/>
-                <input type="checkbox" name="amenities" value="Dryer"/> Dryer<br/>
-                <input type="checkbox" name="amenities" value="Washer"/> Washer<br/>
-                <input type="checkbox" name="amenities" value="Internet"/> Internet<br/>
-                <input type="checkbox" name="amenities" value="Pool"/> Pool<br/>
-                <input type="checkbox" name="amenities" value="TV"/> TV<br/>
-                <input type="checkbox" name="amenities" value="Cable"/> Cable<br/>
-                <input type="checkbox" name="amenities" value="Board Games"/> Board Games<br/>
-                
+            <div class="form-description-box">
+                <textarea type="description" class="listing-textbox" id="description" name="description"
+                    placeholder="House Description" cols="30" rows="5" class="form-control"></textarea>
             </div>
 
-            <!--
-            <form id="imageInput" class="listing-input" action="/upload" method="POST" enctype="multipart/form-data">
-            <button type="submit" value="Submit"
-            class="upload-button">Upload Image</button>
-            -->
+
+            <div class="form-checklist">
+                <input type="checkbox" name="amenities" value="Grill" /> Grill<br />
+                <input type="checkbox" name="amenities" value="Dryer" /> Dryer<br />
+                <input type="checkbox" name="amenities" value="Washer" /> Washer<br />
+                <input type="checkbox" name="amenities" value="Internet" /> Internet<br />
+                <input type="checkbox" name="amenities" value="Pool" /> Pool<br />
+                <input type="checkbox" name="amenities" value="TV" /> TV<br />
+                <input type="checkbox" name="amenities" value="Cable" /> Cable<br />
+                <input type="checkbox" name="amenities" value="Board Games" /> Board Games<br />
+            </div>
 
             <button type="submit" value="submit" class="register-button">
-              Submit
+                Submit
             </button>
 
         </form>
