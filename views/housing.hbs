@@ -48,9 +48,9 @@ function speech(event) {
 
 
   <form action="/housing" method="GET" class="form-inline">
-    <div class="form-group">
+    <div class="search-form-group">
       <button type="button" id="start-btn" onclick="speech()" class="voice-search-button">&#127908</button>
-      <input type="text" id="searchbar" name="search" placeholder="Listing search..." class="form-control">
+      <input type="text" id="searchbar" name="search" class="search-bar" placeholder="Listing search..." class="form-control">
       <input type="submit" value="&#128269" class="search-btn">
     </div>
 
@@ -67,10 +67,11 @@ function speech(event) {
         <li>
           <div class="housingCard">
             <a href="/housing/{{this._id}}"><img src="{{this.image}}" class="cardImage"></a>
-            <h4>{{this.name}}</h4>
-            
+            <h3>{{this.name}}</h3>
+            <p>{{this.streetAddress}}, {{this.city}}</p>
           </div>
         </li>
+
         {{/each}} 
         </ul>
     </div>
