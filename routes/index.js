@@ -306,6 +306,11 @@ router.post('/add-listing', upload.single('image'), (req, res) => {
 
 });
 
+// Registration Page
+router.get('/chat', (req, res) => {
+  res.render('chat')
+})
+
 
 function escapeRegex(text) {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
