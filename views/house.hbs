@@ -56,22 +56,21 @@
   <h3>Located in {{listing.city}}, {{listing.state}}</h3>
 
   <div id="map" name="map"></div>
-  
+
   <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUo99cCKpUBKbERNPyP399gYX3GLe05Rs&callback=initMap&libraries=&v=weekly"
     async>
-  </script>
+    </script>
+
 
 
 </body>
-
 <div id="dropin-wrapper">
   <div id="checkout-message"></div>
   <div id="dropin-container"></div>
-  <button id="submit-button" class = "payment-button">Submit payment</button>
+  <button id="submit-button" class="payment-button">Submit payment</button>
 </div>
-
 <script>
   var button = document.querySelector('#submit-button');
 
@@ -87,8 +86,8 @@
         $.ajax({
           type: 'POST',
           url: '/checkout',
-          data: {'paymentMethodNonce': payload.nonce}
-        }).done(function(result) {
+          data: { 'paymentMethodNonce': payload.nonce }
+        }).done(function (result) {
           // Tear down the Drop-in UI
           instance.teardown(function (teardownErr) {
             if (teardownErr) {
@@ -111,5 +110,7 @@
     });
   });
 </script>
+
+
 
 </html>

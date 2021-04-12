@@ -22,10 +22,15 @@ body{
 
 .pfs-logo {
     color: inherit;
-    font-size: 1.25em;
+    margin-left: 1.75rem;
     text-decoration: none;
     text-align: center;
-    margin-left: 1.75rem;
+    font-size: 20px;
+}
+
+.gnome-home {
+    width: 50px;
+    height: 70px;
 }
 
 .main-nav a {
@@ -37,8 +42,8 @@ body{
 .main-header {
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
     align-items: center;
-    margin: 60px auto;
 }
 
 .full-height-grow {
@@ -125,6 +130,7 @@ body{
 .register-button p  {
     color:#0c7742; 
     margin: 0.25em;
+    align-self: center;
 }
 
 .login-button {
@@ -204,12 +210,12 @@ textarea {
   .listing-container {
     border: 2px solid #fffaeb;
     background-color: #fffaeb;
-    max-width: 300px;
     border-radius: 10px;
     width: 40%;
     color: #0c7742;
     margin: 0 auto;
     flex-direction: column;
+    padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
