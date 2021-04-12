@@ -11,16 +11,10 @@
     let map;
 
     function initMap() {
-      map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: {{ latitude }}, lng: { { longitude } } },
-    zoom: 13,
-        });
+    map = new google.maps.Map(document.getElementById("map"), {center: { lat: {{ latitude }}, lng: {{ longitude }} }, zoom: 13});
 
-    const marker = new google.maps.Marker({
-      position: { lat: {{ latitude }}, lng: { { longitude } } },
-    map: map,
-           });
-      }
+    const marker = new google.maps.Marker({ position: { lat: {{ latitude }}, lng: {{ longitude }} }, map: map});
+    }
 
   </script>
 
@@ -37,10 +31,11 @@
   <h1>{{listing.name}} hosted by {{listing.email}}</h1>
 
 
-  {{!-- <img src="{{listing.image}}" style="width:100%"> --}}
-
+  
   <h3> {{listing.description}}</h3>
   <hr>
+
+  <img src="{{listing.image}}" class="cardImage"></a>
 
   <h3>Amenities</h3>
 
@@ -59,11 +54,20 @@
 
   <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
   <script
+<<<<<<< HEAD
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUo99cCKpUBKbERNPyP399gYX3GLe05Rs&callback=initMap&libraries=&v=weekly" 
+    async></script>
+=======
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUo99cCKpUBKbERNPyP399gYX3GLe05Rs&callback=initMap&libraries=&v=weekly"
     async>
     </script>
 
 
+<<<<<<< HEAD
+=======
+</body>
+>>>>>>> 7efba98affc18675e0724511b66d7983e55502df
+>>>>>>> 4a2521016800003b04a9f93b2a8722d6ea34937e
 
 </body>
 <div id="dropin-wrapper">
@@ -71,6 +75,16 @@
   <div id="dropin-container"></div>
   <button id="submit-button" class="payment-button">Submit payment</button>
 </div>
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+
+</body>
+
+=======
+>>>>>>> 7efba98affc18675e0724511b66d7983e55502df
+>>>>>>> 4a2521016800003b04a9f93b2a8722d6ea34937e
 <script>
   var button = document.querySelector('#submit-button');
 
