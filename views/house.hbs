@@ -6,11 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us</title>
-  <!-- includes the Braintree JS client SDK -->
-  <script src="https://js.braintreegateway.com/web/dropin/1.27.0/js/dropin.min.js"></script>
-
-  <!-- includes jQuery  -->
-  <script src="http://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
 
   <script>
     let map;
@@ -22,6 +17,12 @@
     }
 
   </script>
+
+  <!-- includes the Braintree JS client SDK -->
+  <script src="https://js.braintreegateway.com/web/dropin/1.27.0/js/dropin.min.js"></script>
+
+  <!-- includes jQuery  -->
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -50,10 +51,20 @@
   <h3>Located in {{listing.city}}, {{listing.state}}</h3>
 
   <div id="map" name="map"></div>
+  
   <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
   <script
+<<<<<<< HEAD
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUo99cCKpUBKbERNPyP399gYX3GLe05Rs&callback=initMap&libraries=&v=weekly" 
     async></script>
+=======
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUo99cCKpUBKbERNPyP399gYX3GLe05Rs&callback=initMap&libraries=&v=weekly"
+    async>
+  </script>
+
+
+</body>
+>>>>>>> 7efba98affc18675e0724511b66d7983e55502df
 
 <div id="dropin-wrapper">
   <div id="checkout-message"></div>
@@ -61,9 +72,12 @@
   <button id="submit-button" class = "payment-button">Submit payment</button>
 </div>
 
+<<<<<<< HEAD
 
 </body>
 
+=======
+>>>>>>> 7efba98affc18675e0724511b66d7983e55502df
 <script>
   var button = document.querySelector('#submit-button');
 
