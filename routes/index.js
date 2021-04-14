@@ -312,6 +312,10 @@ router.get('/chat', (req, res) => {
 })
 
 
+router.get('/script.js', (req, res) => {
+  res.render('./script')
+})
+
 function escapeRegex(text) {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };

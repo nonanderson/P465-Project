@@ -16,7 +16,7 @@ const multer = require('multer')
 const GridFsStorage = require('multer-gridfs-storage')
 const Grid = require('gridfs-stream')
 
-
+const PORT = process.env.PORT || 3000
 
 // Load Config
 dotenv.config({ path:  './config/config.env'})
@@ -31,7 +31,16 @@ conn = mongoose.createConnection(process.env.MONGO_URI)
 const app = express()
 
 const server = require('http').createServer(app)
-const io = require('socket.io')(server)
+
+server.listen(5000, () => {
+  console.log('Server listening at port %d', 5000);
+});
+
+const io = require('socket.io')(80)
+
+app.use(express.static('public'))
+
+app.use(express.static('node_modules/socket.io'))
 
 // Logging
 if(process.env.NODE_ENV === 'development') {
@@ -200,7 +209,7 @@ io.on('connection', socket => {
 
 app.use(express.static('views/images'))
 
-const PORT = process.env.PORT || 3000
+
 
 app.listen(
     PORT,
