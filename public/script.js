@@ -3,6 +3,10 @@ const messageContainer = document.getElementById('message-container')
 const messageForm = document.getElementById('send-container')
 const messageInput = document.getElementById('message-input')
 
+const {username, room} = Qs.parse(location.search, {
+  ignoreQueryPrefix: true
+})
+
 const name = prompt('What is your name?')
 appendMessage('You joined')
 socket.emit('new-user', name)

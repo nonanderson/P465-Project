@@ -3,46 +3,38 @@
 
 <head>
   <link rel="stylesheet" href="styles.css">
-      <script>var speechRecognition = window.webkitSpeechRecognition
-
-
+<script>var speechRecognition = window.webkitSpeechRecognition
 var recognition = new speechRecognition()
-
-var searchbar = $("#searchbar")
-
-var instructions = $("#instructions")
-
-var content = ''
-
-recognition.continuous = true
-
-recognition.onstart = function() {
-    instructions.text("Voice recognition is on")
+var searchbar = document.getElementById("searchbar")
+var instructions = document.getElementById("instructions")
+var startbtn = document.getElementById("start-btn")
+recognition.continuous = false
+recognition.onresult = function (event) {
+  
+  var current = event.resultIndex;
+  var transcript = event.results[current][0].transcript
+  document.getElementById("searchbar").value = transcript
+  
 }
-
-$("#start-btn").click(function(event) {
-  console.log("in js file")
-    if(content.length) {
-        content += ''
-    }
-
+function speech(event) {
     recognition.start()
-})</script>
+}
+</script>
   <title>Housing</title>
 </head>
 
 <body>
   {{!-- <h1>View the Listings Here:</h1>
-
   <p>Long-term rentals</p>
   <p>Short term-rentals</p> --}}
 
-  <form action="/housing" method="GET" class="form-inline">
-    <div class="form-group">
-      <input type="text" id="searchbar" name="search" placeholder="Listing search..." class="form-control">
-      <input type="submit" value="Search" class="btn btn-default">
 
-      <!--<button type="button" class="voice-btn" id="start-btn" onclick={{voice}}>Voice Search</button>-->
+
+  <form action="/housing" method="GET" class="form-inline">
+    <div class="search-form-group">
+      <button type="button" id="start-btn" onclick="speech()" class="voice-search-button">&#127908</button>
+      <input type="text" id="searchbar" name="search" class="search-bar" placeholder="Listing search..." class="form-control">
+      <input type="submit" value="&#128269" class="search-btn">
     </div>
 
 
@@ -58,10 +50,11 @@ $("#start-btn").click(function(event) {
         <li>
           <div class="housingCard">
             <a href="/housing/{{this._id}}"><img src="{{this.image}}" class="cardImage"></a>
-            <h4>{{this.name}}</h4>
-            
+            <h3>{{this.name}}</h3>
+            <p>{{this.streetAddress}}, {{this.city}}</p>
           </div>
         </li>
+
         {{/each}} 
         </ul>
     </div>
