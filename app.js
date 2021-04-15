@@ -15,6 +15,7 @@ const crypto = require('crypto')  //avoid duplicate file names
 const multer = require('multer')
 const GridFsStorage = require('multer-gridfs-storage')
 const Grid = require('gridfs-stream')
+const http = require('http')
 
 const PORT = process.env.PORT || 3000
 
@@ -30,17 +31,27 @@ conn = mongoose.createConnection(process.env.MONGO_URI)
 //rip
 const app = express()
 
-const server = require('http').createServer(app)
+// const server = require('http').createServer(app)
 
-server.listen(5000, () => {
-  console.log('Server listening at port %d', 5000);
+// server.listen(5000, () => {
+//   console.log('Server listening at port %d', 5000);
+// });
+
+// const io = require('socket.io')(80)
+
+var socket = require('socket.io')
+
+var server = app.listen(PORT, function(){
+    console.log('listening for requests on port 3000,')
 });
 
-const io = require('socket.io')(80)
+let io = socket(server)
+io.on('connection', function(socket){
+  console.log(`${socket.id} is connected`)
+})
 
 app.use(express.static('public'))
 
-app.use(express.static('node_modules/socket.io'))
 
 // Logging
 if(process.env.NODE_ENV === 'development') {
@@ -190,9 +201,7 @@ app.delete('/images/:id', (req, res) => {
 
 // Chat
 const users = {}
-
 io.on('connection', socket => {
-  socket.emit('chat-message', 'hello world')
   socket.on('new-user', name => {
     users[socket.id] = name
     socket.broadcast.emit('user-connected', name)
@@ -211,7 +220,7 @@ app.use(express.static('views/images'))
 
 
 
-app.listen(
-    PORT,
-    console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
-)
+// app.listen(
+//     PORT,
+//     console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
+// )
