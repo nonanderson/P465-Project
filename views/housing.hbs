@@ -3,39 +3,39 @@
 
 <head>
   <link rel="stylesheet" href="styles.css">
-<script>var speechRecognition = window.webkitSpeechRecognition
+  <script>var speechRecognition = window.webkitSpeechRecognition
 
 
-var recognition = new speechRecognition()
+    var recognition = new speechRecognition()
 
-var searchbar = document.getElementById("searchbar")
+    var searchbar = document.getElementById("searchbar")
 
-var instructions = document.getElementById("instructions")
+    var instructions = document.getElementById("instructions")
 
-var startbtn = document.getElementById("start-btn")
-
-
-
-recognition.continuous = false
+    var startbtn = document.getElementById("start-btn")
 
 
 
-recognition.onresult = function (event) {
-  
-  var current = event.resultIndex;
-
-  var transcript = event.results[current][0].transcript
-
-  document.getElementById("searchbar").value = transcript
-  
-}
+    recognition.continuous = false
 
 
 
-function speech(event) {
-    recognition.start()
-}
-</script>
+    recognition.onresult = function (event) {
+
+      var current = event.resultIndex;
+
+      var transcript = event.results[current][0].transcript
+
+      document.getElementById("searchbar").value = transcript
+
+    }
+
+
+
+    function speech(event) {
+      recognition.start()
+    }
+  </script>
   <title>Housing</title>
 </head>
 
@@ -50,19 +50,20 @@ function speech(event) {
   <form action="/housing" method="GET" class="form-inline">
     <div class="search-form-group">
       <button type="button" id="start-btn" onclick="speech()" class="voice-search-button">&#127908</button>
-      <input type="text" id="searchbar" name="search" class="search-bar" placeholder="Listing search..." class="form-control">
+      <input type="text" id="searchbar" name="search" class="search-bar" placeholder="Listing search..."
+        class="form-control">
       <input type="submit" value="&#128269" class="search-btn">
     </div>
 
 
-      <p id="instructions"></p>
-        
-        {{!--<h4>{{Listing[0].state}}</h4>--}}
-    
+    <p id="instructions"></p>
 
-      <div class="wrapper">
-        <ul class="housingList">
-          <!-- Cant figue out how to get the values by themself #yeet-->
+    {{!--<h4>{{Listing[0].state}}</h4>--}}
+
+
+    <div class="wrapper">
+      <ul class="housingList">
+        <!-- Cant figue out how to get the values by themself #yeet-->
         {{#each Listing}}
         <li>
           <div class="housingCard">
@@ -72,12 +73,13 @@ function speech(event) {
           </div>
         </li>
 
-        {{/each}} 
-        </ul>
+        {{/each}}
+      </ul>
     </div>
-    
+
 
   </form>
 
 </body>
+
 </html>

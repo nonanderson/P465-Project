@@ -29,8 +29,8 @@ body{
 }
 
 .gnome-home {
-    width: 50px;
-    height: 70px;
+    width: 60px;
+    height: 90px;
 }
 
 .main-nav a {
@@ -60,6 +60,7 @@ body{
     color: #0c7742;
     margin: 0 auto;
     margin-bottom: 10px;
+    margin-top: 10vh;
 }
 
 .login-container a {
@@ -67,7 +68,6 @@ body{
     text-decoration: none;
     color: inherit;
 }
-
 
 .register-container {
     border: 2px solid #fffaeb;
@@ -303,7 +303,7 @@ textarea {
     align-items: left;
     display: inline-block;
     margin: 10px 10px;
-    padding: 15px;
+    padding: 10px;
 }
 
 .wrapper {
