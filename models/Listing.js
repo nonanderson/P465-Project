@@ -41,6 +41,11 @@ const ListingSchema = new mongoose.Schema({
   amenities: {
     type: [String],
     required: true
+  },
+
+  id: {
+    type: String,
+    required: true
   }
 });
 

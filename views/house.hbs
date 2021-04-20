@@ -26,37 +26,8 @@
 </head>
 
 <body class="house-view">
-  <header class="main-header">
-    <!--logo and homepage-->
-    <a href = "/" class = "pfs-logo">
-      {{!-- <img src = "place-for-space.png">  --}}
-      <div class = "pfs">Place for Space</div>
-    </a>
-    
-    <!--main header, contains about, renter into, realtor info, login, and example housing access-->
-    <nav class = "main-nav">
-      <!--about us page-->
-      <a href="/about-page">About</a>
-
-      <!--houses page-->
-      <div class="dropdown">
-        <button class="dropbtn">Houses</button>
-        <div class="dropdown-content">
-          <a href="/housing" >Check Out Houses</a>
-          <a href="/add-listing" >Create a Listing</a>
-        </div>
-      </div>
-      
-      
-      <a href="/registration">Create Account</a>
-
-      <!--login page-->
-      <a href="/login" >Login</a>
-
-    </nav>
-</header>
-
-    <h1>{{listing.name}} hosted by {{listing.email}}</h1>
+  <h1>{{listing.id}}</h1>
+    <h1>{{listing.name}} hosted by <a href="/chat?username={{firstName}}&room={{firstName}}+{{listing.id}}"> {{listing.email}}</a></h1>
 
 
     {{!-- <img src="{{listing.image}}" style="width:100%"> --}}

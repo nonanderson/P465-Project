@@ -434,3 +434,7 @@ hr{
       background-color: transparent;
       border-color: #0c7742;
   }
+
+  .invis {
+      content-visibility: hidden;
+  }
