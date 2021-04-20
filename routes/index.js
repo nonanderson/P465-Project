@@ -306,15 +306,15 @@ router.post('/add-listing', upload.single('image'), (req, res) => {
 
 });
 
-// Registration Page
+// Chat
 router.get('/chat', (req, res) => {
   res.render('chat')
 })
 
-
-// router.get('/script.js', (req, res) => {
-//   res.render('./script')
-// })
+// Join Chat
+router.get('/joinchat', (req, res) => {
+  res.render('joinchat')
+})
 
 function escapeRegex(text) {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");

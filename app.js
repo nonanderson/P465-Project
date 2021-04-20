@@ -16,6 +16,8 @@ const multer = require('multer')
 const GridFsStorage = require('multer-gridfs-storage')
 const Grid = require('gridfs-stream')
 const http = require('http')
+const {userJoin, getCurrentUser, userLeave, getRoomUsers} = require('./public/chat-users')
+const formatMessage = require('./public/messages')
 
 const PORT = process.env.PORT || 3000
 
@@ -31,6 +33,8 @@ conn = mongoose.createConnection(process.env.MONGO_URI)
 //rip
 const app = express()
 
+app.use(express.static('public'))
+
 // const server = require('http').createServer(app)
 
 // server.listen(5000, () => {
@@ -40,17 +44,68 @@ const app = express()
 // const io = require('socket.io')(80)
 
 var socket = require('socket.io')
+const { format } = require('path')
 
 var server = app.listen(PORT, function(){
     console.log('listening for requests on port 3000,')
 });
 
-let io = socket(server)
-io.on('connection', function(socket){
-  console.log(`${socket.id} is connected`)
-})
+const botName = ""
 
-app.use(express.static('public'))
+let io = socket(server)
+io.on('connection', socket => {
+  socket.on('joinRoom', ({ username, room }) => {
+    const user = userJoin(socket.id, username, room);
+
+    console.log(user)
+
+    socket.join(user.room);
+
+    // Welcome current user
+    socket.emit('message', formatMessage(botName, 'Welcome to ChatCord!'));
+
+    // Broadcast when a user connects
+    socket.broadcast
+      .to(user.room)
+      .emit(
+        'message',
+        formatMessage(botName, `${user.username} has joined the chat`)
+      );
+
+    // Send users and room info
+    io.to(user.room).emit('roomUsers', {
+      room: user.room,
+      users: getRoomUsers(user.room)
+    });
+  });
+
+  // Listen for chatMessage
+  socket.on('chatMessage', msg => {
+    const user = getCurrentUser(socket.id);
+
+    io.to(user.room).emit('message', formatMessage(user.username, msg));
+  });
+
+  // Runs when client disconnects
+  socket.on('disconnect', () => {
+    const user = userLeave(socket.id)
+
+    if (user) {
+      io.to(user.room).emit(
+        'message',
+        formatMessage(botName, `${user.username} has left the chat`)
+      );
+
+      // Send users and room info
+      io.to(user.room).emit('roomUsers', {
+        room: user.room,
+        users: getRoomUsers(user.room)
+      });
+    }
+  });
+});
+
+
 
 
 // Logging
