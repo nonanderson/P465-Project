@@ -1,9 +1,33 @@
 const users = []
+const User = require('../models/GoogleUser')
 
 // Join user to chat
 function userJoin(id, username, room) {
   const user = { id, username, room }
 
+  const roomArray = room.split(' ')
+  const listingOwnerId = roomArray[1]
+
+
+  User.findById(listingOwnerId).exec(async function(err, foundUser){
+    if(err){
+        console.log(err);
+    } else {
+      //
+      const link =  "&room=" + username + "+" + listingOwnerId
+      if(!foundUser.chatLinks.includes(link)){
+        if(listingOwnerId != foundUser._id){
+          foundUser.chatLinks.push(link)
+          foundUser.save()
+        }
+      }
+      
+      console.log(foundUser)
+      
+    }
+  })
+
+ 
   users.push(user)
 
   return user

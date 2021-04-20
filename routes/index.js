@@ -46,6 +46,7 @@ router.get('/', ensureAuth ,async (req, res) => {
   try {
     res.render('dashboard', {
       firstName: req.user.firstName,
+      chatLinks: req.user.chatLinks,
     })
   }
   catch (e) {
@@ -150,11 +151,17 @@ router.get("/housing/:id", ensureAuth, async function(req, res){
 })
 
 // Dashboard Page
-router.get('/dashboard', ensureAuth, async (req, res) => {
+router.get('/dashboard', ensureAuth ,async (req, res) => {
   try {
-    //PUT LINK IN THE RENDER
+    const name = []
+    req.user.chatLinks.forEach(element => name.push(element.split("+")[0].split('=')[1]))
+    console.log(name)
+
     res.render('dashboard', {
       firstName: req.user.firstName,
+      chatLinks: req.user.chatLinks,
+      chatNames: name,
+
     })
   }
   catch (e) {
@@ -276,11 +283,6 @@ router.post('/add-listing', upload.single('image'), (req, res) => {
 // Chat
 router.get('/chat', (req, res) => {
   res.render('chat')
-})
-
-// Join Chat
-router.get('/joinchat', (req, res) => {
-  res.render('joinchat')
 })
 
 function escapeRegex(text) {
