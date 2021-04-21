@@ -25,7 +25,6 @@ const storage = multer.diskStorage({
 const fileFilter = (req, file, cb) => {
   //reject file
   if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
-    console.log("ITS A PNG OR JPEG")
     cb(null, true)
   }
   //accept file
@@ -102,7 +101,7 @@ router.get('/housing', (req, res, {scripts: scripts}) => {
                if(allListings.length < 1) {
                    noMatch = "No listings match that query, please try again.";
                }
-               res.render("housing",{Listing:allListings, noMatch: noMatch}, {});
+               res.render("housing",{Listing:allListings, noMatch: noMatch});
                //console.log(allListings)
               }
             });
@@ -270,7 +269,6 @@ router.post('/add-listing', upload.single('image'), (req, res) => {
           'success_msg',
           'Listing created'
         );
-        console.log(newListing._id)
         res.redirect('/add-listing');
       })
       .catch(err => console.log(err));
