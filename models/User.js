@@ -23,6 +23,10 @@ const UserSchema = new mongoose.Schema({
   },
   image: {
     type: String,
+  },
+  chatLinks: {
+    type: [String],
+    default: []
   }
 });
 

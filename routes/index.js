@@ -8,6 +8,7 @@ const passport = require('../config/passport')
 const methodOverride = require('method-override')
 const { ensureAuth } = require('../middleware/auth')
 const Listing = require('../models/Listing')
+const User = require('../models/User')
 const { query } = require('express')
 const fs = require('fs')
 const NodeGeocoder = require('node-geocoder')
@@ -24,7 +25,6 @@ const storage = multer.diskStorage({
 const fileFilter = (req, file, cb) => {
   //reject file
   if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
-    console.log("ITS A PNG OR JPEG")
     cb(null, true)
   }
   //accept file
@@ -45,6 +45,7 @@ router.get('/', ensureAuth ,async (req, res) => {
   try {
     res.render('dashboard', {
       firstName: req.user.firstName,
+      chatLinks: req.user.chatLinks,
     })
   }
   catch (e) {
@@ -117,38 +118,10 @@ router.get('/housing', (req, res, {scripts: scripts}) => {
          }
         );
     }
-
-    // //get images
-    // const gridConn = require('../app')
-    // const gfs = gridConn.gfs
-    // try {
-    //   gfs.files.find().toArray((err, files) => {
-    //     // Check if files
-    //     if (!files || files.length === 0) {
-    //       res.render('file-upload', { files: false })
-    //     }
-    //     else {
-    //       files.map(file => {
-    //         if (file.contentType === 'image/jpeg' || file.contentType === 'image/png') {
-    //           file.isImage = true;
-    //         }
-    //         else {
-    //           file.isImage = false;
-    //         }
-    //       })
-    //       res.render('file-upload', { files: files })
-    //     }
-  
-    //   })
-    // }
-    // catch (e) {
-    //   console.log(e)
-    // }
 })
 
 
-router.get("/housing/:id", async function(req, res){
-  //find the campground with provided ID
+router.get("/housing/:id", ensureAuth, async function(req, res){
   const api_key = process.env.GOOGLE_MAP_KEY
   Listing.findById(req.params.id).lean().populate("comments").exec(async function(err, foundListing){
       if(err){
@@ -156,11 +129,10 @@ router.get("/housing/:id", async function(req, res){
       } else {
         const options = {
           provider: 'google',
-         
-          // Optional depending on the providers
+  
 
-          apiKey: api_key, // for Mapquest, OpenCage, Google Premier
-          formatter: null // 'gpx', 'string', ...
+          apiKey: api_key, 
+          formatter: null 
         }
       
         const geocoder = NodeGeocoder(options)
@@ -171,32 +143,24 @@ router.get("/housing/:id", async function(req, res){
 
         var lat = locationInfo[0].latitude
         var lon = locationInfo[0].longitude
-        res.render("house", {listing: foundListing, layout: 'house', latitude: lat, longitude: lon});
+        res.render("house", {listing: foundListing, layout: 'house', latitude: lat, longitude: lon, firstName: req.user.firstName
+        })
       }
   })
 })
 
-
-
-// router.post('/housing', (req, res) => {
-//   const { inquiry } = req.body
-
-//   Listing.find({city: inquiry}, (error, data) => {
-//     if(error){
-//       console.log(error)
-//     }
-//     else{
-//       console.log(data)
-//     }
-//   })
-//   res.redirect('/housing')
-// })
-
 // Dashboard Page
-router.get('/dashboard', ensureAuth, async (req, res) => {
+router.get('/dashboard', ensureAuth ,async (req, res) => {
   try {
+    const name = []
+    req.user.chatLinks.forEach(element => name.push(element.split("+")[0].split('=')[1]))
+    console.log(name)
+
     res.render('dashboard', {
       firstName: req.user.firstName,
+      chatLinks: req.user.chatLinks,
+      chatNames: name,
+
     })
   }
   catch (e) {
@@ -235,16 +199,18 @@ router.get('/file-upload', (req, res) => {
 
 
 // Create Listing Page
-router.get('/add-listing', /*ensureAuth,*/ (req, res) => {
+router.get('/add-listing', ensureAuth, (req, res) => {
+  //console.log(req.user)
   res.render('add-listing', {
-    layout: 'add-listing',
+    layout: 'add-listing', userID: req.user._id,
   })
 })
 
 // Submit listing
 router.post('/add-listing', upload.single('image'), (req, res) => {
   
-  var { email, name, description, streetAddress, city, state, zip, image, amenities} = req.body
+  
+  var { email, name, description, streetAddress, city, state, zip, image, amenities, id} = req.body
   image = req.file.filename
 
   let errors = []
@@ -253,6 +219,7 @@ router.post('/add-listing', upload.single('image'), (req, res) => {
   if (!email || !name || !streetAddress || !city || !state || !zip || !amenities || !description) {
     errors.push({ msg: 'Please fill all fields' })
   }
+
   // console.log(typeof(image))
   // console.log(fs.readFileSync(image))
 
@@ -273,7 +240,8 @@ router.post('/add-listing', upload.single('image'), (req, res) => {
       state,
       zip,
       image,
-      amenities
+      amenities,
+      id
     })
   } else {
     const newListing = new Listing({
@@ -285,9 +253,11 @@ router.post('/add-listing', upload.single('image'), (req, res) => {
       state,
       zip,
       image,
-      amenities
+      amenities,
+      id
     })
-    
+
+  
     //newListing.image.data = fs.readFileSync(image)
 
 
@@ -304,16 +274,13 @@ router.post('/add-listing', upload.single('image'), (req, res) => {
       .catch(err => console.log(err));
   }
 
+  
+
 });
 
 // Chat
 router.get('/chat', (req, res) => {
   res.render('chat')
-})
-
-// Join Chat
-router.get('/joinchat', (req, res) => {
-  res.render('joinchat')
 })
 
 function escapeRegex(text) {

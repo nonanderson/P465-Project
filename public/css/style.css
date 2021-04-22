@@ -433,3 +433,30 @@ hr{
     align-items:baseline;
 }
 
+
+
+.join-container {
+    border: 2px solid #fffaeb;
+    background-color: #fffaeb;
+    max-width: 300px;
+    border-radius: 10px;
+    width: 40%;
+    color: #0c7742;
+    padding: 10px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+  .join-form-control {
+      border-radius: 5;
+  }
+
+  .chat-join-btn {
+      border-radius: 5px;
+      background-color: transparent;
+      border-color: #0c7742;
+  }
+
+  .invis {
+      content-visibility: hidden;
+  }

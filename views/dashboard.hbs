@@ -9,6 +9,17 @@
   <h1>PlaceforSpace: Home</h1>
   <h2>The center for all of your short-term and long-term rental needs</h2>
   <h2>Hello, {{firstName}}</h2>
+  {{#each chatNames}}
+    <h2> {{this}}</h2>
+  {{/each}}
+
+  {{#each chatLinks}}
+    
+    <a href="/chat?username={{../firstName}}{{this}}"> {{lookup ../chatNames @index}} wants to chat with you</a>
+    <br>
+  {{/each}}
+  <h2>{{firstName}}</h2>
+  <br>
   <a href="/logout" class="btn btn-secondary">Logout</a>
 <div class = "navbar">
     <nav>

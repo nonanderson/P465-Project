@@ -9,6 +9,9 @@ const { username, room } = Qs.parse(location.search, {
   ignoreQueryPrefix: true,
 });
 
+const roomArray = room.split(' ')
+const listingOwnerId = roomArray[1]
+
 const socket = io();
 
 // Join chatroom
@@ -81,11 +84,3 @@ function outputUsers(users) {
   });
 }
 
-//Prompt the user before leave chat room
-document.getElementById('leave-btn').addEventListener('click', () => {
-  const leaveRoom = confirm('Are you sure you want to leave the chatroom?');
-  if (leaveRoom) {
-    window.location = '../index.html';
-  } else {
-  }
-});

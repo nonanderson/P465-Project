@@ -62,7 +62,7 @@ io.on('connection', socket => {
     socket.join(user.room);
 
     // Welcome current user
-    socket.emit('message', formatMessage(botName, 'Welcome to ChatCord!'));
+    socket.emit('message', formatMessage(botName, 'Welcome!'));
 
     // Broadcast when a user connects
     socket.broadcast
@@ -253,23 +253,6 @@ app.delete('/images/:id', (req, res) => {
     res.redirect('/file-upload');
   });
 });
-
-// Chat
-const users = {}
-io.on('connection', socket => {
-  socket.on('new-user', name => {
-    users[socket.id] = name
-    socket.broadcast.emit('user-connected', name)
-  })
-  socket.on('send-chat-message', message => {
-    socket.broadcast.emit('chat-message', { message: message, name: users[socket.id] })
-  })
-  socket.on('disconnect', () => {
-    socket.broadcast.emit('user-disconnected', users[socket.id])
-    delete users[socket.id]
-  })
-})
-
 
 app.use(express.static('views/images'))
 

@@ -24,6 +24,11 @@ const GoogleUserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  chatLinks: {
+    type: [String],
+    required: true,
+    default: []
+  }
 })
 
 module.exports = mongoose.model('GoogleUser', GoogleUserSchema)
