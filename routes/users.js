@@ -108,12 +108,14 @@ router.post('/registration', (req, res) => {
 // Login
 router.post('/login', function(req, res, next) {
   passport.authenticate('local', {scope: ['profile']}, function(err, user, info) {
+    
     if (err) { return next(err); }
     if (!user) { return res.redirect('/login'); }
+
     req.logIn(user, function(err) {
+      console.log("login:" + req.user.firstName)
       if (err) { return next(err); }
       var redirectTo = req.session.redirectTo ? req.session.redirectTo : '/dashboard';
-      delete req.session.redirectTo;
       res.redirect(redirectTo);
     });
   })(req, res, next);

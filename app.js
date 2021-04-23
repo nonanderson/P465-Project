@@ -148,8 +148,8 @@ app.use(express.urlencoded({ extended: false }))
 app.use(
   session({
     secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: false,
+    resave: true,
+    saveUninitialized: true,
     store: MongoStore.create({ mongoUrl: process.env.MONGO_URI })
   })
 )
