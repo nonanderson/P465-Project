@@ -469,8 +469,10 @@ hr{
       color: #0c7742;
   }
 
-.amenities-list{
-    align-items:baseline;
+.amenities-list li{
+    justify-items: left;
+    display: inline;
+    padding: 30px;
 }
 
 
@@ -500,3 +502,10 @@ hr{
   .invis {
       content-visibility: hidden;
   }
+
+  .icons {
+     width: 30px ;
+     height: 30px;
+  }
+
+ 

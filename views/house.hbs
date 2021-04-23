@@ -31,13 +31,13 @@
   
   <h3> {{listing.description}}</h3>
   <hr>
-  <img src="/{{listing.image}}" class="cardImage"></a>
+  <img src="/{{listing.image}}" class="cardImage">
 
   <h3>Amenities</h3>
 
   <ul class="amenities-list">
     {{#each listing.amenities}}
-    <li>{{this}}</li>
+      <li><img src="/{{this}}.png" class="icons"></a>  {{this}}</li>
     {{/each}}
   </ul>
 
