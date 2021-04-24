@@ -1,16 +1,13 @@
 //const socket = io('http://localhost:3000')
 const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages');
-const roomName = document.getElementById('room-name');
+
 const userList = document.getElementById('users');
 
 // Get username and room from URL
 const { username, room } = Qs.parse(location.search, {
   ignoreQueryPrefix: true,
 });
-
-const roomArray = room.split(' ')
-const listingOwnerId = roomArray[1]
 
 const socket = io();
 
@@ -19,7 +16,7 @@ socket.emit('joinRoom', { username, room });
 
 // Get room and users
 socket.on('roomUsers', ({ room, users }) => {
-  outputRoomName(room);
+  //outputRoomName(room);
   outputUsers(users);
 });
 
@@ -59,19 +56,21 @@ function outputMessage(message) {
   div.classList.add('message');
   const p = document.createElement('p');
   p.classList.add('meta');
-  p.innerText = message.username;
+  p.innerHTML = `<h4 class = "name">${message.username}</h4>`;
   p.innerHTML += `<span>${message.time}</span>`;
   div.appendChild(p);
   const para = document.createElement('p');
   para.classList.add('text');
   para.innerText = message.text;
   div.appendChild(para);
+  const br = document.createElement('hr')
+  div.appendChild(br)
   document.querySelector('.chat-messages').appendChild(div);
 }
 
 // Add room name to DOM
 function outputRoomName(room) {
-  roomName.innerText = room;
+  roomName.innerText = "";
 }
 
 // Add users to DOM

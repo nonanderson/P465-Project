@@ -508,4 +508,27 @@ hr{
      height: 30px;
   }
 
+ /*CHAT STUFF*/
+ .chat-container {
+   
+    border-radius: 10px;
+     
+ }
+ .chat-messages{
+    border: 2px solid #373b3fe8;
+    background-color: #dedede;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    color: #373b3fe8;
+ }
+
+ .name {
+     margin-right: 20px;
+     display: inline-block
+ }
+
+ .hr {
+     color: ;
+ }
  

@@ -23,7 +23,6 @@ function userJoin(id, username, room) {
         }
       }
       
-      console.log(foundUser)
       
     }
   })
