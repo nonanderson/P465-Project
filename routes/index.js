@@ -39,6 +39,12 @@ const upload = multer({storage: storage, limits: {
   fileFilter: fileFilter
 })
 
+//Main Page
+router.get('/', (req, res) => {
+  res.render('dashboard')
+})
+
+
 // Registration Page
 router.get('/registration', (req, res) => {
   res.render('registration', {

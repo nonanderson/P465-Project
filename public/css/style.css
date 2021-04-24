@@ -274,6 +274,13 @@ textarea {
     display: inline-block;
     margin: 10px;
     align-items: center;
+    color: #771a0c
+}
+
+.form-group label::after {
+    color: red;
+    content: ' *';
+    display: inline;
 }
 
 .form-group a {
@@ -491,6 +498,10 @@ hr{
 
   .join-form-control {
       border-radius: 5;
+  }
+
+  .form-control {
+      color: #771a0c;
   }
 
   .chat-join-btn {
