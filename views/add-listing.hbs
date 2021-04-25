@@ -20,9 +20,10 @@
 <body>
 
     <div class="listing-container">
+        <h1>Create a listing</h1>
         <form class="listing-form" id="textInput" action=" /add-listing" method="POST" enctype="multipart/form-data">
 
-            <h1>Create a listing</h1>
+            
 
             <div class="form-group">
                 <input type="email" class="listing-input" id="email" name="email" class="form-control"
@@ -92,7 +93,7 @@
                 <input type="hidden" class="listing-input" id="id" name="id" class="form-control" value={{userID}} />
             </div>
 
-            <button type="submit" value="submit" class="register-button">
+            <button class="listing-submit-button" type="submit" value="submit" class="register-button">
                 Submit
             </button>
 
