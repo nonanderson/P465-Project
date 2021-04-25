@@ -37,21 +37,13 @@ const upload = multer({storage: storage, limits: {
   fileSize: 1024 * 1024 * 8
 },
   fileFilter: fileFilter
-  })
-
-// @desc    Dashboard
-// @route   GET /dashboard
-router.get('/', ensureAuth ,async (req, res) => {
-  try {
-    res.render('dashboard', {
-      firstName: req.user.firstName,
-      chatLinks: req.user.chatLinks,
-    })
-  }
-  catch (e) {
-    console.log(e)
-  }
 })
+
+//Main Page
+router.get('/', (req, res) => {
+  res.render('dashboard')
+})
+
 
 // Registration Page
 router.get('/registration', (req, res) => {
@@ -154,7 +146,7 @@ router.get('/dashboard', ensureAuth ,async (req, res) => {
   try {
     const name = []
     req.user.chatLinks.forEach(element => name.push(element.split("+")[0].split('=')[1]))
-    console.log(name)
+    
 
     res.render('dashboard', {
       firstName: req.user.firstName,

@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "braintree": "^3.3.0",
     "config": "^3.3.6",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^4.2.0",

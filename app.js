@@ -57,7 +57,7 @@ io.on('connection', socket => {
   socket.on('joinRoom', ({ username, room }) => {
     const user = userJoin(socket.id, username, room);
 
-    console.log(user)
+    
 
     socket.join(user.room);
 
@@ -127,11 +127,6 @@ app.engine(
     defaultLayout: 'main',
     extname: '.hbs',
     helpers: {
-      doubleSubmit: function() {
-        console.log("PRESSED")
-        document.forms[0].submit();
-        document.forms[1].submit();
-      },
       isdefined: function (value) {
         return value !== undefined;
       }
@@ -148,8 +143,8 @@ app.use(express.urlencoded({ extended: false }))
 app.use(
   session({
     secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: false,
+    resave: true,
+    saveUninitialized: true,
     store: MongoStore.create({ mongoUrl: process.env.MONGO_URI })
   })
 )
@@ -262,3 +257,5 @@ app.use(express.static('views/images'))
 //     PORT,
 //     console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
 // )
+const checkout = require('./routes/checkout');
+app.use('/checkout', checkout);

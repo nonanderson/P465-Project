@@ -16,13 +16,13 @@ function userJoin(id, username, room) {
       //
       const link =  "&room=" + username + "+" + listingOwnerId
       if(!foundUser.chatLinks.includes(link)){
-        if(listingOwnerId != foundUser._id){
+        
+        if(username != foundUser.firstName){
           foundUser.chatLinks.push(link)
           foundUser.save()
         }
       }
       
-      console.log(foundUser)
       
     }
   })

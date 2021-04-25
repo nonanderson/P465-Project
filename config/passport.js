@@ -7,7 +7,7 @@ const User = require('../models/User');
 
 module.exports = function(passport) {
   passport.use(
-    new LocalStrategy({ usernameField: 'email',passwordField: 'password' }, (email, password, done) => {
+    new LocalStrategy({ usernameField: 'email',passwordField: 'password' }, async (email, password, done) => {
       // Match user
       User.findOne({
         email: email
@@ -30,10 +30,12 @@ module.exports = function(passport) {
   );
 
   passport.serializeUser(function(user, done) {
+    console.log("SerializeUser")
     done(null, user.id);
   });
 
   passport.deserializeUser(function(id, done) {
+    console.log("DeserializeUser")
     User.findById(id, function(err, user) {
       done(err, user);
     });

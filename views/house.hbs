@@ -1,65 +1,108 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>About Us</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
 
-        <script>
-      let map;
+  <script>
+    let map;
 
-      function initMap() {
-        map = new google.maps.Map(document.getElementById("map"), {
-          center: { lat: {{latitude}}, lng: {{longitude}} },
-          zoom: 13,
-        });
+    function initMap() {
+    map = new google.maps.Map(document.getElementById("map"), {center: { lat: {{ latitude }}, lng: {{ longitude }} }, zoom: 13});
 
-          const marker = new google.maps.Marker({
-            position: { lat: {{latitude}}, lng: {{longitude}} },
-            map: map,
-           });
-      }
-      
-    </script>
+    const marker = new google.maps.Marker({ position: { lat: {{ latitude }}, lng: {{ longitude }} }, map: map});
+    }
+
+  </script>
+
+  <!-- includes the Braintree JS client SDK -->
+  <script src="https://js.braintreegateway.com/web/dropin/1.27.0/js/dropin.min.js"></script>
+
+  <!-- includes jQuery  -->
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body class="house-view">
-    <h1>{{listing.name}} hosted by <a href="/chat?username={{firstName}}&room={{firstName}}+{{listing.id}}"> {{listing.email}}</a></h1>
+  <h1>{{listing.name}} hosted by <a href="/chat?username={{firstName}}&room={{firstName}}+{{listing.id}}"> {{listing.email}}</a></h1>
+  
+  <h3> {{listing.description}}</h3>
+  <hr>
+  <img src="/{{listing.image}}" class="cardImage">
 
+  <h3>Amenities</h3>
 
-    {{!-- <img src="{{listing.image}}" style="width:100%"> --}}
-    
-    <h3> {{listing.description}}</h3>
-    <hr>
+  <ul class="amenities-list">
+    {{#each listing.amenities}}
+      <li><img src="/{{this}}.png" class="icons"></a>  {{this}}</li>
+    {{/each}}
+  </ul>
 
-    <h3>Amenities</h3>
-    
-    <ul class="amenities-list">
-        {{#each listing.amenities}}
-            <li>{{this}}</li>
-        {{/each}}
-    </ul>
+  <hr>
 
-    <hr>
+  <h3>Located in {{listing.city}}, {{listing.state}}</h3>
 
+  <div id="map" name="map"></div>
 
-    <h3>Located in {{listing.city}}, {{listing.state}}</h3>
+  <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUo99cCKpUBKbERNPyP399gYX3GLe05Rs&callback=initMap&libraries=&v=weekly" 
+    async></script>
 
-    <div id="map" name="map"></div>
-
-
-    
-
-    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUo99cCKpUBKbERNPyP399gYX3GLe05Rs&callback=initMap&libraries=&v=weekly"
-      async
-    ></script>
-    
-
-    
-    
 </body>
+
+</body>
+<div id="dropin-wrapper">
+  <div id="checkout-message"></div>
+  <div id="dropin-container"></div>
+  <button id="submit-button" class="payment-button">Submit payment</button>
+</div>
+
+</body>
+
+<script>
+  var button = document.querySelector('#submit-button');
+
+  braintree.dropin.create({
+    // Insert your tokenization key here
+    authorization: 'sandbox_6mpvphhj_b2nnr6p95344hrxh',
+    container: '#dropin-container'
+  }, function (createErr, instance) {
+    button.addEventListener('click', function () {
+      instance.requestPaymentMethod(function (requestPaymentMethodErr, payload) {
+        // When the user clicks on the 'Submit payment' button this code will send the
+        // encrypted payment information in a variable called a payment method nonce
+        $.ajax({
+          type: 'POST',
+          url: '/checkout',
+          data: { 'paymentMethodNonce': payload.nonce }
+        }).done(function (result) {
+          // Tear down the Drop-in UI
+          instance.teardown(function (teardownErr) {
+            if (teardownErr) {
+              console.error('Could not tear down Drop-in UI!');
+            } else {
+              console.info('Drop-in UI has been torn down!');
+              // Remove the 'Submit payment' button
+              $('#submit-button').remove();
+            }
+          });
+
+          if (result.success) {
+            $('#checkout-message').html('<h1>Success</h1><p>Refresh to try another transaction.</p>');
+          } else {
+            console.log(result);
+            $('#checkout-message').html('<h1>Error</h1><p>Check your console.</p>');
+          }
+        });
+      });
+    });
+  });
+</script>
+
+
+
 </html>
