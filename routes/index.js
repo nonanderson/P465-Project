@@ -41,7 +41,7 @@ const upload = multer({storage: storage, limits: {
 
 //Main Page
 router.get('/', (req, res) => {
-  res.render('dashboard')
+  res.redirect('/housing')
 })
 
 
@@ -49,27 +49,6 @@ router.get('/', (req, res) => {
 router.get('/registration', (req, res) => {
   res.render('registration', {
     layout: 'registration',
-  })
-})
-
-// About Page
-router.get('/about-page', (req, res) => {
-  res.render('about-page', {
-    layout: 'about-page',
-  })
-})
-
-// About Renting Page
-router.get('/about-renting', (req, res) => {
-  res.render('about-renting', {
-    layout: 'about-renting',
-  })
-})
-
-// About Selling Page
-router.get('/about-selling', (req, res) => {
-  res.render('about-selling', {
-    layout: 'about-selling',
   })
 })
 

@@ -6,9 +6,11 @@
   <title>PlaceforSpace</title>
   <link rel="stylesheet" href="styles.css">
 
-  <h1>PlaceforSpace: Home</h1>
-  <h2>The center for all of your short-term and long-term rental needs</h2>
-  <h2>Hello, {{firstName}}</h2>
+  <h1>Hello {{firstName}}, Welcome Home</h1>
+  <h2>The center for chat notifications from renters and realtors.</h2>
+  <p>This is where you can communicate with prospective buyers and sellers regarding your potential
+    temporary and/or longterm home.
+  </p>
 
   {{#each chatLinks}}
     
@@ -16,7 +18,8 @@
     <br>
   {{/each}}
   <br>
-  <a href="/logout" class="btn btn-secondary">Logout</a>
+  <a href="/logout" class="logout-button
+  ">Logout</a>
 <div class = "navbar">
     <nav>
    </nav>
