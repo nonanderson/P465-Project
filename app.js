@@ -19,7 +19,7 @@ const http = require('http')
 const {userJoin, getCurrentUser, userLeave, getRoomUsers} = require('./public/chat-users')
 const formatMessage = require('./public/messages')
 
-const PORT = process.env.PORT || 3000
+
 
 // Load Config
 dotenv.config({ path:  './config/config.env'})
@@ -43,12 +43,38 @@ app.use(express.static('public'))
 
 // const io = require('socket.io')(80)
 
+//***** CHAT STUFF  *****
+
+//chat heroku socket server shit eegeegegee
+const PORT = process.env.PORT || 3000
+
+/*
+const INDEX = '/chat.hbs';
+const server = express()
+  .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
+  .listen(PORT, () => console.log(`Listening on ${PORT}`));
+
+
+
+const { Server } = require('ws');
+const wss = new Server({ server });
+
 var socket = require('socket.io')
 const { format } = require('path')
+*/
 
+// old localhost listener
 var server = app.listen(PORT, function(){
     console.log('listening for requests on port 3000,')
 });
+
+/*
+//listening code for WEBSERVER rather than localhost
+wss.on('connection', (ws) => {
+  console.log('Client connected');
+  ws.on('close', () => console.log('Client disconnected'));
+});
+*/
 
 const botName = ""
 
@@ -56,9 +82,6 @@ let io = socket(server)
 io.on('connection', socket => {
   socket.on('joinRoom', ({ username, room }) => {
     const user = userJoin(socket.id, username, room);
-
-    
-
     socket.join(user.room);
 
     // Welcome current user
