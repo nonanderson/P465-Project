@@ -20,10 +20,8 @@
 <body>
 
     <div class="listing-container">
-        <h1>Create a listing</h1>
+        <h1>Create a Listing</h1>
         <form class="listing-form" id="textInput" action=" /add-listing" method="POST" enctype="multipart/form-data">
-
-            
 
             <div class="form-group">
                 <input type="email" class="listing-input" id="email" name="email" class="form-control"
@@ -62,26 +60,45 @@
                 <label for="zip">Enter Zip Code</label>
             </div>
 
-            <div class="form-group">
-                <input type="file" name="image" id="image" class="custom-file-input">
-                <label for="image" class="custom-file-label"></label>
-            </div>
-
             <div class="form-description-box">
                 <textarea type="description" class="listing-textbox" id="description" name="description"
                     placeholder="House Description" cols="30" rows="5" class="form-control"></textarea>
             </div>
 
-
-            <div class="form-checklist">
-                <input type="checkbox" name="amenities" value="Grill" /> Grill<br />
-                <input type="checkbox" name="amenities" value="Dryer" /> Dryer<br />
-                <input type="checkbox" name="amenities" value="Washer" /> Washer<br />
-                <input type="checkbox" name="amenities" value="Internet" /> Internet<br />
-                <input type="checkbox" name="amenities" value="Pool" /> Pool<br />
-                <input type="checkbox" name="amenities" value="TV" /> TV<br />
-                <input type="checkbox" name="amenities" value="Board Games" /> Board Games<br />
+            <div class="form-group">
+                <input type="file" name="image" id="image" class="custom-file-input">
+                <label for="image" class="custom-file-label">Upload an Image</label>
             </div>
+
+
+            <label class="listing-check">Grill
+                <input type="checkbox" name="amenities" value="Grill">
+                <span class="checkmark"></span>
+            </label>
+            <label class="listing-check">Dryer
+                <input type="checkbox" name="amenities" value="Dryer">
+                <span class="checkmark"></span>
+            </label>
+            <label class="listing-check">Washer
+                <input type="checkbox" name="amenities" value="Washer">
+                <span class="checkmark"></span>
+            </label>
+            <label class="listing-check">Internet
+                <input type="checkbox" name="amenities" value="Internet">
+                <span class="checkmark"></span>
+            </label>
+            <label class="listing-check">Pool
+                <input type="checkbox" name="amenities" value="Pool">
+                <span class="checkmark"></span>
+            </label>
+            <label class="listing-check">TV
+                <input type="checkbox" name="amenities" value="TV">
+                <span class="checkmark"></span>
+            </label>
+            <label class="listing-check">Board Games
+                <input type="checkbox" name="amenities" value="Board Games">
+                <span class="checkmark"></span>
+            </label>
 
             <!--
             <form id="imageInput" class="listing-input" action="/upload" method="POST" enctype="multipart/form-data">
@@ -93,13 +110,13 @@
                 <input type="hidden" class="listing-input" id="id" name="id" class="form-control" value={{userID}} />
             </div>
 
-            <button class="listing-submit-button" type="submit" value="submit" class="register-button">
-                Submit
-            </button>
+
 
         </form>
 
-
+        <button class="listing-submit-button" type="submit" value="submit">
+            Submit
+        </button>
     </div>
 
 </body>

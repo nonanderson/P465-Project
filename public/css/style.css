@@ -51,6 +51,7 @@ body{
     flex-direction: column;
 }
 
+/* LOGIN CSS */
 .login-container {
     border: 2px solid #fffaeb;
     background-color: #fffaeb;
@@ -68,6 +69,48 @@ body{
     text-decoration: none;
     color: inherit;
 }
+
+.login-button:hover p {
+    color:#2f9459;
+}
+
+.login-button:hover {
+    background-color:#8ddca4;
+}
+
+.login-container a:hover{
+    color: #8ddca4;
+}
+
+.login-button {
+    border: 2px solid #0c7742;
+    color: #fffaeb;
+    background-color: #0c7742;
+    padding: .5rem .5rem;
+    border-radius: 50px;
+    text-align: center;
+    align-items: center;
+    width: 250px;
+    height: 40px;
+    text-decoration: none;
+}
+
+.login-button p{
+    text-decoration: none;
+    color:#0c7742; 
+    margin: 0.25em;
+}
+
+/*used on regisation and login page*/
+.form-group {
+    display: inline-block;
+    align-items: center;
+    color: #771a0c;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* REGISTRATION CSS */
 
 .register-container {
     border: 2px solid #fffaeb;
@@ -107,6 +150,151 @@ body{
     align-self: center;
 }
 
+.register-question {
+    align-items: baseline;
+    align-self: center;
+    text-align: center;
+}
+
+.register-button p  {
+    color:#0c7742; 
+    margin: 0.25em;
+    align-self: center;
+}
+
+.register-button:hover p {
+    color:#2f9459;
+}
+
+.register-button:hover {
+    background-color:#8ddca4;
+}
+
+/* LISTING CSS */
+
+.listing-container {
+    text-align: center;
+    border-color: #fffaeb;
+    background-color: #fffaeb;
+    border-radius: 10px;
+    border-width: 5px;
+    color: #0c7742;
+    min-width: 550px;
+    max-width: 900px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding-top: 1rem;
+    padding-bottom: 10px;
+}
+
+.listing-form {
+    columns: 2;
+    align-items: center;
+    max-width: 650px;
+    min-width: 500px;
+    max-height: 800px;
+    margin-left: 10%;
+
+}
+
+.listing-submit-button{
+    color: #fffaeb;
+    background-color: #0c7742;
+    padding: .5rem .5rem;
+    border-radius: 50px;
+    border-color: #0c7742;
+    width: 250px;
+    height: 40px;
+    text-decoration: none;
+    align-self: center;
+}
+
+
+.listing-submit-button:hover {
+    background-color: #8ddca4;
+    border-color: #8ddca4;
+}
+
+.listing-textbox {
+    align-self: center;
+    font-family: arial;
+    width: 85%;
+}
+
+.listing-check {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-top: 10px;
+}
+
+.listing-check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+  }
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #8ddca4;
+    border-radius: 15px 15px;
+  }
+
+  /* On mouse-over, add a grey background color */
+.listing-check:hover input ~ .checkmark {
+    background-color: #49a864;
+  }
+
+.listing-check input:checked ~ .checkmark {
+    background-color: #0c7742;
+  }
+  
+  /* Show the checkmark when checked */
+  .listing-check input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .listing-check .checkmark:after {
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+.form-control {
+    align-self: center;
+    display: inline-block;
+    position: relative;
+    top: -3em;
+}
+
+label{
+    /*Places the lables aligned to the input box*/
+    font-size: 14px;
+    width: 10em; 
+    margin-right: 1.5em;
+    padding-left: 2rem;
+    text-align: left;
+}
+
 .upload-button {
     border: 2px solid #fffaeb;
     border-radius: 50px;
@@ -121,36 +309,53 @@ body{
     background-color: #8ddca4;
 }
 
-.register-question {
-    align-items: baseline;
+.amenities-list li{
+    justify-items: left;
+    display: inline;
+    padding: 30px;
+}
+
+/* HOUSING CSS */
+
+.housingList{
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+    list-style-type: none;
+    align-items: left;
+    display: inline-block;
+    margin: 10px 10px;
+    padding: 10px;
+}
+
+.housingCard {
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 2.5%;
+    margin-bottom: 2.5%;
+    background-color: #fffaeb;
+    color: #0c7742;
+    max-width: 300px;
+    max-height: 80%;
+    border-radius: 50px 0px;
+    text-align:center;
+    font-family: arial;
+    text-rendering:geometricPrecision;
+    break-inside: avoid;
+  }
+  
+.housingCard img{
+    border-radius: 50px 0px;
+    border-color: #0c7742;
     align-self: center;
-    text-align: center;
+    width: 100%;
+    height: 85%;
 }
 
-.register-button p  {
-    color:#0c7742; 
-    margin: 0.25em;
-    align-self: center;
+.housingCard:hover{
+    background-color: #8ddca4;
 }
 
-.login-button {
-    border: 2px solid #0c7742;
-    color: #fffaeb;
-    background-color: #0c7742;
-    padding: .5rem .5rem;
-    border-radius: 50px;
-    text-align: center;
-    align-items: center;
-    width: 250px;
-    height: 40px;
-    text-decoration: none;
-}
-
-.login-button p{
-    text-decoration: none;
-    color:#0c7742; 
-    margin: 0.25em;
-}
 
 .search-form-group {
     align-items: baseline;
@@ -185,15 +390,6 @@ form input {
     text-align: center;
 }
 
-form label{
-    /*Places the lables alined to the input box*/
-    text-align:right;
-    justify-self: right;
-    align-self: center;
-    display: inline-block;
-    flex-direction: column;
-    font-size: 12px;
-}
 
 textarea {
     background: transparent;
@@ -229,36 +425,7 @@ textarea {
       border-color: #0c7742;
   }
 
-  .listing-container {
-    align-items: left;
-    border: 2px solid #fffaeb;
-    background-color: #fffaeb;
-    border-radius: 10px;
-    color: #0c7742;
-    margin: 0 auto;
-    flex-direction: column;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-}
-
-.listing-form {
-    columns: 2;
-}
-
-.listing-submit-button{
-    border: 2px solid #0c7742;
-    color: #fffaeb;
-    background-color: #0c7742;
-    padding: .5rem .5rem;
-    border-radius: 50px;
-    text-align: center;
-    align-items: center;
-    width: 250px;
-    height: 40px;
-    text-decoration: none;
-    align-self: center;
-}
+ 
 
 .navbar{
     background-color: #fffaeb;
@@ -306,13 +473,6 @@ textarea {
     display: block;
     text-align: left;
 }
-/*used on regisation and login page*/
-.form-group {
-    display: inline-block;
-    margin: 10px;
-    align-items: center;
-    color: #771a0c
-}
 
 .form-group label::after {
     color: red;
@@ -324,32 +484,23 @@ textarea {
     align-self: center;
 }
 
+.form-group {
+    display: inline-block;
+    height: 4em;
+    position: relative;
+}
+
 .form-checklist {
-    float: left;
     font-size: 18px;
-    align-items: baseline;
     width: 10px;
     height: 10px;
     margin-left: 20px;
     padding: 10px;
 }
 
+
 .form-checklist a {
     align-self: baseline;
-}
-
-/*HOUSING CARD*/
-
-.housingList{
-    columns: 3;
-    -webkit-columns: 3;
-    -moz-columns: 3;
-    list-style-type: none;
-    
-    align-items: left;
-    display: inline-block;
-    margin: 10px 10px;
-    padding: 10px;
 }
 
 .wrapper {
@@ -357,29 +508,7 @@ textarea {
     padding: auto;
 }
 
-.housingCard {
-    box-sizing: border-box;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 2.5%;
-    margin-bottom: 2.5%;
-    background-color: #fffaeb;
-    color: #0c7742;
-    max-width: 300px;
-    max-height: 80%;
-    border-radius: 50px 0px;
-    text-align:center;
-    font-family: arial;
-    text-rendering:geometricPrecision;
-    break-inside: avoid;
-  }
-  
-.housingCard img{
-    border-radius: 50px 0px;
-    border-color: #0c7742;
-    align-self: center;
-    width: 100%;
-    height: 85%;
-}
+
 
 .search-btn {
     border-radius: 5;
@@ -394,38 +523,10 @@ textarea {
     text-align: left;
 }
 
-.listing-textbox {
-    align-self: center;
-    font-family: arial;
-    width: 85%;
-}
 
-.listing-input {
-    font-family: arial;
-    align-self: center;
-}
 
 /* HOVER EFFECTS */
 
-.register-button:hover p {
-    color:#2f9459;
-}
-
-.register-button:hover {
-    background-color:#8ddca4;
-}
-
-.login-button:hover p {
-    color:#2f9459;
-}
-
-.login-button:hover {
-    background-color:#8ddca4;
-}
-
-.login-container a:hover{
-    color: #8ddca4;
-}
 
 .main-nav a:hover{
     color: #8ddca4;
@@ -444,9 +545,7 @@ textarea {
     color: #fffaeb;
 }
 
-.housingCard:hover{
-    background-color: #8ddca4;
-}
+
 
 .google-option {
     margin-top: 15px;
@@ -515,11 +614,6 @@ hr{
       color: #0c7742;
   }
 
-.amenities-list li{
-    justify-items: left;
-    display: inline;
-    padding: 30px;
-}
 
 
 
