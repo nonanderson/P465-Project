@@ -104,8 +104,12 @@ body{
 /*used on regisation and login page*/
 .form-group {
     display: inline-block;
+    margin: 10px;
     align-items: center;
-    color: #771a0c;
+}
+
+.form-group a {
+    align-self: center;
 }
 
 /* REGISTRATION CSS */
@@ -281,8 +285,7 @@ body{
 .form-control {
     align-self: center;
     display: inline-block;
-    position: relative;
-    top: -3em;
+    color: #771a0c;
 }
 
 label{
@@ -613,7 +616,13 @@ hr{
       color: #0c7742;
   }
 
-
+.hr {
+    clear:both;
+    display:block;
+    size: 2;
+    width: 90%;
+    color: #0c7742;
+  }
 
 
 .join-container {
@@ -630,10 +639,6 @@ hr{
 
   .join-form-control {
       border-radius: 5;
-  }
-
-  .form-control {
-      color: #771a0c;
   }
 
   .chat-join-btn {
@@ -669,4 +674,20 @@ hr{
  .name {
      margin-right: 20px;
      display: inline-block
- }
+ } 
+
+ .logout-button{
+    color: #a32c1a;
+    background-color: #fffaeb;
+    padding: .5em;
+    border-radius: 17px 17px;
+    border-color: #0c7742;
+    text-decoration: none;
+    position: absolute;
+    bottom: 5px;
+}
+
+.logout-button:hover {
+    background-color: #8ddca4;
+    border-color: #8ddca4;
+}
