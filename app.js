@@ -48,33 +48,12 @@ app.use(express.static('public'))
 //chat heroku socket server shit eegeegegee
 const PORT = process.env.PORT || 3000
 
-/*
-const INDEX = '/chat.hbs';
-const server = express()
-  .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
-  .listen(PORT, () => console.log(`Listening on ${PORT}`));
-
-
-
-const { Server } = require('ws');
-const wss = new Server({ server });
-
 var socket = require('socket.io')
 const { format } = require('path')
-*/
 
-// old localhost listener
 var server = app.listen(PORT, function(){
     console.log('listening for requests on port 3000,')
 });
-
-/*
-//listening code for WEBSERVER rather than localhost
-wss.on('connection', (ws) => {
-  console.log('Client connected');
-  ws.on('close', () => console.log('Client disconnected'));
-});
-*/
 
 const botName = ""
 
