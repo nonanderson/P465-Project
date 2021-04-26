@@ -219,6 +219,7 @@ body{
     align-self: center;
     font-family: arial;
     width: 85%;
+    margin-top: 5px;
 }
 
 .listing-check {
