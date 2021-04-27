@@ -55,14 +55,16 @@ function outputMessage(message) {
   const div = document.createElement('div');
   div.classList.add('message');
   const p = document.createElement('p');
-  p.classList.add('meta');
-  p.innerHTML = `<h3 class = "name">${message.username}</h3>`;
-  p.innerHTML += `<p class="message-text">${message.text}</p>`;
-  div.appendChild(p);
-  const para = document.createElement('p');
-  para.classList.add('text');
-  para.innerText = `${message.time}`;
-  div.appendChild(para);
+  //p.classList.add('meta');
+  const messageBox = document.createElement('div');
+  div.innerHTML = `<h3 class = "name">${message.username}</h3>`;
+  messageBox.innerHTML += `<p class="message-text">${message.text}</p>`;
+  div.appendChild(messageBox);
+  const time = document.createElement('p');
+  time.classList.add('text');
+  time.innerText = `${message.time}`;
+  messageBox.appendChild(time);
+  div.appendChild(messageBox);
   const br = document.createElement('hr')
   div.appendChild(br)
   document.querySelector('.chat-messages').appendChild(div);

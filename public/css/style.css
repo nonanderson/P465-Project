@@ -129,11 +129,9 @@ body{
 }
 
 .login-regis-hr {
-    clear:both;
-    display:block;
-    height: 2px;
+    border: 1px solid #0c7742;
+    background-color: #0c7742;
     width: 90%;
-    color: #0c7742;
   }
 
 /* REGISTRATION CSS */
@@ -624,34 +622,6 @@ textarea {
   }
 
 
-
-hr{
-    border: 1px solid #fffaeb;
-    background-color: #fffaeb;
-}
-
-.join-container {
-    border: 2px solid #fffaeb;
-    background-color: #fffaeb;
-    max-width: 300px;
-    border-radius: 10px;
-    width: 40%;
-    color: #0c7742;
-    padding: 10px;
-    margin: 0 auto;
-    margin-bottom: 10px;
-  }
-
-  .join-form-control {
-      border-radius: 5;
-  }
-
-  .chat-join-btn {
-      border-radius: 5px;
-      background-color: transparent;
-      border-color: #0c7742;
-  }
-
   .invis {
       content-visibility: hidden;
   }
@@ -684,18 +654,83 @@ hr{
     background-color:#8ddca4;
  }
 
+ #users li {
+    list-style-type: none;
+}
+
  .chat-messages{
     border: 2px solid #373b3fe8;
     background-color: #a8d1fae8;
     border-radius: 5px;
     color: #07090ae8;
     padding-left: 10px;
+    padding-right: 10px;
     padding-bottom: 10px;
+    margin-bottom: 10px;
     font-size: 12px;
  }
 
- .meta {
-    font-size: 16px;
-    margin-bottom: 5px;
-    margin-top: 5px;
+ .message div {
+     background-color: #a5e1e9;
+     padding: 10px;
+     border-radius: 20px;
+     padding-bottom: 30px;
+     position: relative;
+
  }
+
+ .name {
+     padding-left: 8px;
+     font-size: 20px;
+     font-weight: 900;
+ }
+
+ .message-text {
+     font-size: 14px;
+ }
+
+ .text {
+     font-size: 10px;
+     position: absolute;
+     right: 15px;
+     font-style: italic;
+ }
+
+
+hr{
+    border: 1px solid #fffaeb;
+    background-color: #fffaeb;
+    width: 90%;
+}
+
+.join-container {
+    border: 2px solid #fffaeb;
+    background-color: #fffaeb;
+    max-width: 300px;
+    border-radius: 10px;
+    width: 40%;
+    color: #0c7742;
+    padding: 10px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+  .join-form-control {
+      border-radius: 5;
+  }
+
+  .chat-join-btn {
+      border-radius: 5px;
+      background-color: transparent;
+      border-color: #0c7742;
+  }
+
+  .name {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .message-text {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
