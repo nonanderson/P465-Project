@@ -352,6 +352,11 @@ label{
     padding: 10px;
 }
 
+.houseImage {
+    width: 40%;
+    height: 40%;
+}
+
 .housingCard {
     box-sizing: border-box;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
