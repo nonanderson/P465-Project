@@ -56,12 +56,12 @@ function outputMessage(message) {
   div.classList.add('message');
   const p = document.createElement('p');
   p.classList.add('meta');
-  p.innerHTML = `<h4 class = "name">${message.username}</h4>`;
-  p.innerHTML += `<span>${message.time}</span>`;
+  p.innerHTML = `<h3 class = "name">${message.username}</h3>`;
+  p.innerHTML += `<p class="message-text">${message.text}</p>`;
   div.appendChild(p);
   const para = document.createElement('p');
   para.classList.add('text');
-  para.innerText = message.text;
+  para.innerText = `${message.time}`;
   div.appendChild(para);
   const br = document.createElement('hr')
   div.appendChild(br)

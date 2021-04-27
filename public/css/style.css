@@ -101,6 +101,22 @@ body{
     margin: 0.25em;
 }
 
+.logout-button{
+    color: #a32c1a;
+    background-color: #fffaeb;
+    padding: .5em;
+    border-radius: 17px 17px;
+    border-color: #0c7742;
+    text-decoration: none;
+    position: absolute;
+    bottom: 5px;
+}
+
+.logout-button:hover {
+    background-color: #8ddca4;
+    border-color: #8ddca4;
+}
+
 /*used on regisation and login page*/
 .form-group {
     display: inline-block;
@@ -111,6 +127,14 @@ body{
 .form-group a {
     align-self: center;
 }
+
+.login-regis-hr {
+    clear:both;
+    display:block;
+    height: 2px;
+    width: 90%;
+    color: #0c7742;
+  }
 
 /* REGISTRATION CSS */
 
@@ -500,7 +524,6 @@ textarea {
     padding: 10px;
 }
 
-
 .form-checklist a {
     align-self: baseline;
 }
@@ -509,8 +532,6 @@ textarea {
     margin: auto;
     padding: auto;
 }
-
-
 
 .search-btn {
     border-radius: 5;
@@ -525,10 +546,7 @@ textarea {
     text-align: left;
 }
 
-
-
 /* HOVER EFFECTS */
-
 
 .main-nav a:hover{
     color: #8ddca4;
@@ -546,8 +564,6 @@ textarea {
 .dropdown a:hover {
     color: #fffaeb;
 }
-
-
 
 .google-option {
     margin-top: 15px;
@@ -569,8 +585,6 @@ textarea {
    background-color: #8ddca4;
 }
 
-
-
 .btn:hover{
     background-color: #8ddca4;
 }
@@ -581,13 +595,6 @@ textarea {
     margin: 0 auto;
     margin-bottom: 50px;
 } 
-
-hr{
-    border: 1px solid #fffaeb;
-    background-color: #fffaeb;
-}
-/* House page*/
-
 
 .payment-button {
     cursor: pointer;
@@ -616,14 +623,12 @@ hr{
       color: #0c7742;
   }
 
-.hr {
-    clear:both;
-    display:block;
-    size: 2;
-    width: 90%;
-    color: #0c7742;
-  }
 
+
+hr{
+    border: 1px solid #fffaeb;
+    background-color: #fffaeb;
+}
 
 .join-container {
     border: 2px solid #fffaeb;
@@ -658,36 +663,39 @@ hr{
 
  /*CHAT STUFF*/
  .chat-container {
-   
     border-radius: 10px;
-     
+    align-items: left;
+    text-align: left;
  }
+
+ .chat-button {
+    border: 2px solid #0c7742;
+    color: #fffaeb;
+    background-color: #0c7742;
+    padding: .5rem .5rem;
+    border-radius: 50px;
+    text-align: center;
+    align-items: center;
+    height: 40px;
+    text-decoration: none;
+ }
+
+ .chat-button:hover {
+    background-color:#8ddca4;
+ }
+
  .chat-messages{
     border: 2px solid #373b3fe8;
-    background-color: #dedede;
+    background-color: #a8d1fae8;
     border-radius: 5px;
-    padding: 10px;
-    margin: 10px 0;
-    color: #373b3fe8;
+    color: #07090ae8;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
  }
 
- .name {
-     margin-right: 20px;
-     display: inline-block
- } 
-
- .logout-button{
-    color: #a32c1a;
-    background-color: #fffaeb;
-    padding: .5em;
-    border-radius: 17px 17px;
-    border-color: #0c7742;
-    text-decoration: none;
-    position: absolute;
-    bottom: 5px;
-}
-
-.logout-button:hover {
-    background-color: #8ddca4;
-    border-color: #8ddca4;
-}
+ .meta {
+    font-size: 16px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+ }
